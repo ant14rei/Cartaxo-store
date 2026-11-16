@@ -1,0 +1,819 @@
+{
+ "content": {
+  "contato": {
+   "insta": "cartaxostore_",
+   "whats": "5583981857161"
+  },
+  "decants": [
+   {
+    "b": "Lattafa",
+    "c": [
+     "#C9733A",
+     "#5A2A12"
+    ],
+    "cat": "arabe",
+    "fam": "Âmbar especiado",
+    "g": "u",
+    "id": "khamrah",
+    "img": "",
+    "imgId": "dc4c4b80b6dd180ad4c09e177f9fb15a",
+    "liq": 14263132,
+    "n": "Khamrah",
+    "notes": [
+     "Canela",
+     "Tâmara",
+     "Praliné"
+    ],
+    "oc": [
+     "noite",
+     "especial"
+    ],
+    "off": false,
+    "out": false,
+    "pr": [
+     2490,
+     4490,
+     6290
+    ],
+    "st": [
+     "doce"
+    ]
+   },
+   {
+    "b": "Lattafa",
+    "c": [
+     "#3B3B3B",
+     "#B88A4A"
+    ],
+    "cat": "arabe",
+    "fam": "Amadeirado especiado",
+    "g": "m",
+    "id": "asad",
+    "img": "",
+    "imgId": "",
+    "liq": 14861194,
+    "n": "Asad",
+    "notes": [
+     "Pimenta-preta",
+     "Tabaco",
+     "Baunilha"
+    ],
+    "oc": [
+     "noite",
+     "dia"
+    ],
+    "off": false,
+    "out": false,
+    "pr": [
+     2290,
+     3990,
+     5590
+    ],
+    "st": [
+     "amadeirado"
+    ]
+   },
+   {
+    "b": "Armaf",
+    "c": [
+     "#1F2A36",
+     "#9BB3C9"
+    ],
+    "cat": "arabe",
+    "fam": "Frutado amadeirado",
+    "g": "m",
+    "id": "cdnim",
+    "img": "",
+    "imgId": "",
+    "liq": 15853256,
+    "n": "Club de Nuit Intense Man",
+    "notes": [
+     "Abacaxi",
+     "Bétula",
+     "Almíscar"
+    ],
+    "oc": [
+     "dia",
+     "noite"
+    ],
+    "off": false,
+    "out": false,
+    "pr": [
+     2690,
+     4790,
+     6690
+    ],
+    "st": [
+     "fresco",
+     "amadeirado"
+    ]
+   },
+   {
+    "b": "Afnan",
+    "c": [
+     "#2A2346",
+     "#C2A6E8"
+    ],
+    "cat": "arabe",
+    "fam": "Oriental baunilhado",
+    "g": "m",
+    "id": "9pm",
+    "img": "",
+    "imgId": "",
+    "liq": 15324574,
+    "n": "9PM",
+    "notes": [
+     "Maçã",
+     "Canela",
+     "Baunilha"
+    ],
+    "oc": [
+     "noite"
+    ],
+    "off": false,
+    "out": false,
+    "pr": [
+     2290,
+     3990,
+     5590
+    ],
+    "st": [
+     "doce"
+    ]
+   },
+   {
+    "b": "Lattafa",
+    "c": [
+     "#F2B8C6",
+     "#C9567A"
+    ],
+    "cat": "arabe",
+    "fam": "Floral gourmand",
+    "g": "f",
+    "id": "yara",
+    "img": "",
+    "imgId": "",
+    "liq": 16243165,
+    "n": "Yara",
+    "notes": [
+     "Orquídea",
+     "Frutas tropicais",
+     "Baunilha"
+    ],
+    "oc": [
+     "dia"
+    ],
+    "off": false,
+    "out": false,
+    "pr": [
+     2290,
+     3990,
+     5590
+    ],
+    "st": [
+     "doce",
+     "floral"
+    ]
+   },
+   {
+    "b": "Al Haramain",
+    "c": [
+     "#D9B44A",
+     "#6B4E12"
+    ],
+    "cat": "arabe",
+    "fam": "Âmbar frutado",
+    "g": "u",
+    "id": "aog",
+    "img": "",
+    "imgId": "",
+    "liq": 15781754,
+    "n": "Amber Oud Gold Edition",
+    "notes": [
+     "Bergamota",
+     "Âmbar",
+     "Almíscar"
+    ],
+    "oc": [
+     "especial",
+     "noite"
+    ],
+    "off": false,
+    "out": false,
+    "pr": [
+     3290,
+     5990,
+     8490
+    ],
+    "st": [
+     "doce",
+     "amadeirado"
+    ]
+   },
+   {
+    "b": "Xerjoff",
+    "c": [
+     "#6CC3F0",
+     "#1B5E8C"
+    ],
+    "cat": "nicho",
+    "fam": "Frutado ambarado",
+    "g": "u",
+    "id": "erba",
+    "img": "",
+    "imgId": "",
+    "liq": 16181956,
+    "n": "Erba Pura",
+    "notes": [
+     "Laranja",
+     "Frutas",
+     "Almíscar branco"
+    ],
+    "oc": [
+     "dia",
+     "especial"
+    ],
+    "off": false,
+    "out": false,
+    "pr": [
+     5990,
+     10990,
+     15490
+    ],
+    "st": [
+     "fresco",
+     "doce"
+    ]
+   },
+   {
+    "b": "BDK Parfums",
+    "c": [
+     "#F4C9A8",
+     "#E58DB0"
+    ],
+    "cat": "nicho",
+    "fam": "Notas a confirmar com a loja",
+    "g": "u",
+    "id": "impadia",
+    "img": "",
+    "imgId": "",
+    "liq": 16309448,
+    "n": "Impadia",
+    "notes": [
+     "A confirmar"
+    ],
+    "oc": [
+     "especial"
+    ],
+    "off": false,
+    "out": false,
+    "pr": [
+     5490,
+     9990,
+     13990
+    ],
+    "st": [
+     "floral"
+    ]
+   },
+   {
+    "b": "Parfums de Marly",
+    "c": [
+     "#2B3A55",
+     "#C7B48A"
+    ],
+    "cat": "nicho",
+    "fam": "Oriental amadeirado",
+    "g": "m",
+    "id": "layton",
+    "img": "",
+    "imgId": "",
+    "liq": 15391150,
+    "n": "Layton",
+    "notes": [
+     "Maçã",
+     "Lavanda",
+     "Baunilha"
+    ],
+    "oc": [
+     "noite",
+     "especial"
+    ],
+    "off": false,
+    "out": false,
+    "pr": [
+     5490,
+     9990,
+     13990
+    ],
+    "st": [
+     "doce",
+     "amadeirado"
+    ]
+   },
+   {
+    "b": "Maison Francis Kurkdjian",
+    "c": [
+     "#D2443B",
+     "#F2C2A0"
+    ],
+    "cat": "nicho",
+    "fam": "Âmbar floral",
+    "g": "u",
+    "id": "br540",
+    "img": "",
+    "imgId": "",
+    "liq": 15976872,
+    "n": "Baccarat Rouge 540",
+    "notes": [
+     "Açafrão",
+     "Jasmim",
+     "Âmbar-cinzento"
+    ],
+    "oc": [
+     "especial",
+     "noite"
+    ],
+    "off": false,
+    "out": false,
+    "pr": [
+     6990,
+     12990,
+     18490
+    ],
+    "st": [
+     "doce",
+     "amadeirado"
+    ]
+   },
+   {
+    "b": "Dior",
+    "c": [
+     "#1E3A5F",
+     "#7FA7C9"
+    ],
+    "cat": "grife",
+    "fam": "Aromático fresco",
+    "g": "m",
+    "id": "sauvage",
+    "img": "",
+    "imgId": "",
+    "liq": 14477298,
+    "n": "Sauvage Eau de Parfum",
+    "notes": [
+     "Bergamota",
+     "Pimenta",
+     "Ambroxan"
+    ],
+    "oc": [
+     "dia",
+     "noite"
+    ],
+    "off": false,
+    "out": false,
+    "pr": [
+     3990,
+     7290,
+     10290
+    ],
+    "st": [
+     "fresco"
+    ]
+   },
+   {
+    "b": "Chanel",
+    "c": [
+     "#0F1D3A",
+     "#5B7BB2"
+    ],
+    "cat": "grife",
+    "fam": "Amadeirado aromático",
+    "g": "m",
+    "id": "bleu",
+    "img": "",
+    "imgId": "",
+    "liq": 14147306,
+    "n": "Bleu de Chanel Eau de Parfum",
+    "notes": [
+     "Cítricos",
+     "Incenso",
+     "Sândalo"
+    ],
+    "oc": [
+     "dia"
+    ],
+    "off": false,
+    "out": false,
+    "pr": [
+     4290,
+     7990,
+     11190
+    ],
+    "st": [
+     "fresco",
+     "amadeirado"
+    ]
+   },
+   {
+    "b": "Carolina Herrera",
+    "c": [
+     "#1A1A1A",
+     "#B48A5A"
+    ],
+    "cat": "grife",
+    "fam": "Floral oriental",
+    "g": "f",
+    "id": "goodgirl",
+    "img": "",
+    "imgId": "",
+    "liq": 15255472,
+    "n": "Good Girl",
+    "notes": [
+     "Tuberosa",
+     "Cacau",
+     "Fava tonka"
+    ],
+    "oc": [
+     "noite",
+     "especial"
+    ],
+    "off": false,
+    "out": false,
+    "pr": [
+     3490,
+     6290,
+     8790
+    ],
+    "st": [
+     "doce",
+     "floral"
+    ]
+   },
+   {
+    "b": "Yves Saint Laurent",
+    "c": [
+     "#E7C15A",
+     "#2B2B2B"
+    ],
+    "cat": "grife",
+    "fam": "Floral aromático",
+    "g": "f",
+    "id": "libre",
+    "img": "",
+    "imgId": "",
+    "liq": 15983286,
+    "n": "Libre",
+    "notes": [
+     "Lavanda",
+     "Flor de laranjeira",
+     "Baunilha"
+    ],
+    "oc": [
+     "dia",
+     "especial"
+    ],
+    "off": false,
+    "out": false,
+    "pr": [
+     3690,
+     6690,
+     9390
+    ],
+    "st": [
+     "floral",
+     "fresco"
+    ]
+   },
+   {
+    "b": "Marca",
+    "c": [
+     "#8A8F96",
+     "#2B2F35"
+    ],
+    "cat": "arabe",
+    "fam": "",
+    "g": "u",
+    "id": "d-mw14miol",
+    "img": "",
+    "imgId": "",
+    "liq": 15983544,
+    "n": "Novo decant",
+    "notes": [],
+    "oc": [],
+    "off": false,
+    "out": false,
+    "pr": [
+     2490,
+     4490,
+     6290
+    ],
+    "st": []
+   }
+  ],
+  "frascos": [
+   {
+    "b": "Lattafa",
+    "c": "#C9733A",
+    "cat": "arabe",
+    "con": "Eau de Parfum",
+    "decant": "khamrah",
+    "id": "f-khamrah",
+    "img": "",
+    "imgId": "9b3897cac9e0e0cb7a2d5110d186c748",
+    "imgs": [
+     "9b3897cac9e0e0cb7a2d5110d186c748",
+     "d3b68e9d5ebd1d108ca3730a54ee3f1c"
+    ],
+    "ml": 100,
+    "n": "Khamrah",
+    "notes": [
+     "Canela",
+     "Tâmara",
+     "Praliné"
+    ],
+    "off": false,
+    "out": false,
+    "price": 28990
+   },
+   {
+    "b": "Lattafa",
+    "c": "#B88A4A",
+    "cat": "arabe",
+    "con": "Eau de Parfum",
+    "decant": "asad",
+    "id": "f-asad",
+    "img": "",
+    "imgId": "",
+    "imgs": [],
+    "ml": 100,
+    "n": "Asad",
+    "notes": [
+     "Pimenta-preta",
+     "Tabaco",
+     "Baunilha"
+    ],
+    "off": false,
+    "out": false,
+    "price": 24990
+   },
+   {
+    "b": "Lattafa",
+    "c": "#E58DB0",
+    "cat": "arabe",
+    "con": "Eau de Parfum",
+    "decant": "yara",
+    "id": "f-yara",
+    "img": "",
+    "imgId": "",
+    "imgs": [],
+    "ml": 100,
+    "n": "Yara",
+    "notes": [
+     "Orquídea",
+     "Frutas tropicais",
+     "Baunilha"
+    ],
+    "off": false,
+    "out": false,
+    "price": 23990
+   },
+   {
+    "b": "Armaf",
+    "c": "#5B7BB2",
+    "cat": "arabe",
+    "con": "Eau de Toilette",
+    "decant": "cdnim",
+    "id": "f-cdnim",
+    "img": "",
+    "imgId": "",
+    "imgs": [],
+    "ml": 105,
+    "n": "Club de Nuit Intense Man",
+    "notes": [
+     "Abacaxi",
+     "Bétula",
+     "Almíscar"
+    ],
+    "off": false,
+    "out": false,
+    "price": 32990
+   },
+   {
+    "b": "Afnan",
+    "c": "#8E73C9",
+    "cat": "arabe",
+    "con": "Eau de Parfum",
+    "decant": "9pm",
+    "id": "f-9pm",
+    "img": "",
+    "imgId": "",
+    "imgs": [],
+    "ml": 100,
+    "n": "9PM",
+    "notes": [
+     "Maçã",
+     "Canela",
+     "Baunilha"
+    ],
+    "off": false,
+    "out": false,
+    "price": 27990
+   },
+   {
+    "b": "Al Haramain",
+    "c": "#D9B44A",
+    "cat": "arabe",
+    "con": "Eau de Parfum",
+    "decant": "aog",
+    "id": "f-aog",
+    "img": "",
+    "imgId": "",
+    "imgs": [],
+    "ml": 60,
+    "n": "Amber Oud Gold Edition",
+    "notes": [
+     "Bergamota",
+     "Âmbar",
+     "Almíscar"
+    ],
+    "off": false,
+    "out": false,
+    "price": 44990
+   },
+   {
+    "b": "Rasasi",
+    "c": "#4FA3C7",
+    "cat": "arabe",
+    "con": "Eau de Parfum",
+    "decant": null,
+    "id": "f-hawas",
+    "img": "",
+    "imgId": "",
+    "imgs": [],
+    "ml": 100,
+    "n": "Hawas for Him",
+    "notes": [
+     "Maçã",
+     "Canela",
+     "Âmbar-cinzento"
+    ],
+    "off": false,
+    "out": false,
+    "price": 34990
+   },
+   {
+    "b": "Dior",
+    "c": "#7FA7C9",
+    "cat": "grife",
+    "con": "Eau de Parfum",
+    "decant": "sauvage",
+    "id": "f-sauvage",
+    "img": "",
+    "imgId": "",
+    "imgs": [],
+    "ml": 100,
+    "n": "Sauvage Eau de Parfum",
+    "notes": [
+     "Bergamota",
+     "Pimenta",
+     "Ambroxan"
+    ],
+    "off": false,
+    "out": false,
+    "price": 89990
+   },
+   {
+    "b": "Xerjoff",
+    "c": "#6CC3F0",
+    "cat": "nicho",
+    "con": "Eau de Parfum",
+    "decant": "erba",
+    "id": "f-erba",
+    "img": "",
+    "imgId": "",
+    "imgs": [],
+    "ml": 100,
+    "n": "Erba Pura",
+    "notes": [
+     "Laranja",
+     "Frutas",
+     "Almíscar branco"
+    ],
+    "off": false,
+    "out": false,
+    "price": 149990
+   },
+   {
+    "b": "Parfums de Marly",
+    "c": "#C7B48A",
+    "cat": "nicho",
+    "con": "Eau de Parfum",
+    "decant": "layton",
+    "id": "f-layton",
+    "img": "",
+    "imgId": "",
+    "imgs": [],
+    "ml": 125,
+    "n": "Layton",
+    "notes": [
+     "Maçã",
+     "Lavanda",
+     "Baunilha"
+    ],
+    "off": false,
+    "out": false,
+    "price": 179990
+   }
+  ],
+  "kit": {
+   "cap": 6000,
+   "eligible": [
+    5,
+    10
+   ],
+   "tiers": [
+    [
+     5,
+     15
+    ],
+    [
+     3,
+     10
+    ]
+   ]
+  },
+  "logo": "",
+  "ship": [
+   {
+    "d": "Combinar local e horário",
+    "id": "retirada",
+    "n": "Retirada combinada",
+    "prazo": "A combinar",
+    "v": 0
+   },
+   {
+    "d": "Grátis acima de R$ 99,90",
+    "freeOver": 9990,
+    "id": "cidade",
+    "n": "Entrega na cidade",
+    "prazo": "Até 2 dias úteis",
+    "v": 1000
+   },
+   {
+    "d": "R$ 15,00 de desconto acima de R$ 199,90",
+    "id": "ne",
+    "n": "Correios · Nordeste",
+    "off": 1500,
+    "offOver": 19990,
+    "prazo": "Conforme os Correios",
+    "v": 2200
+   },
+   {
+    "d": "R$ 15,00 de desconto acima de R$ 199,90",
+    "id": "br",
+    "n": "Correios · demais regiões",
+    "off": 1500,
+    "offOver": 19990,
+    "prazo": "Conforme os Correios",
+    "v": 3200
+   }
+  ],
+  "texts": {
+   "c.chamada": "Como funciona o decant",
+   "c.p1": "Selecione cada fragrância e o tamanho: 5, 10 ou 15 ml.",
+   "c.p1t": "Escolha os perfumes",
+   "c.p2": "A partir de 3 decants, o pedido recebe desconto.",
+   "c.p2t": "Monte seu kit",
+   "c.p3": "Seu pedido chega pronto, e você combina pagamento e entrega com a loja.",
+   "c.p3t": "Finalize no WhatsApp",
+   "c.texto": "O decant é uma parte do perfume original, passada para um frasco de vidro com spray. Você usa e conhece a fragrância sem pagar pelo frasco inteiro.",
+   "c.titulo": "O mesmo perfume, em um frasco menor",
+   "d.botao1": "Escolher meus decants",
+   "d.botao2": "Descobrir meu perfume no quiz",
+   "d.chamada": "Decants de 5, 10 e 15 ml",
+   "d.item1": "Árabes, nicho e grife",
+   "d.item2": "Vidro com spray",
+   "d.item3": "Desconto a partir de 3 decants",
+   "d.subtitulo": "Decants de 5, 10 e 15 ml envasados do frasco original. Escolha, monte seu kit e finalize o pedido pelo WhatsApp.",
+   "d.titulo": "Prove o perfume antes de comprar o *frasco inteiro*",
+   "e.chamada": "Entrega por região",
+   "e.texto": "Valores de exemplo. O valor final é confirmado pela loja no WhatsApp.",
+   "e.titulo": "Escolha como receber",
+   "g.aviso": "Prévia: perfumes, preços, entrega e regras do kit são de exemplo.",
+   "g.rodape": "Prévia com preços de exemplo. Marcas citadas pertencem aos seus donos.",
+   "k.botao": "Montar meu kit",
+   "k.chamada": "Kit Descoberta",
+   "k.texto": "Com 3 decants ou mais no pedido, você ganha 10% de desconto. Com 5 ou mais, o desconto sobe para 15%. O desconto entra sozinho no seu pedido.",
+   "k.titulo": "Prove mais, *pague menos*",
+   "l.chamada": "Loja · frascos inteiros",
+   "l.nota": "Fotos, tamanhos e preços de exemplo. Frascos inteiros não entram no desconto do Kit Descoberta.",
+   "l.texto": "Perfumes completos para quem já conhece a fragrância. Ainda em dúvida? Prove antes em decant, no mesmo pedido.",
+   "l.titulo": "Já escolheu o seu? Leve o *frasco inteiro*",
+   "q.chamada": "Quiz do perfume",
+   "q.texto": "As respostas vão junto na mensagem do pedido, para a loja ajudar na escolha.",
+   "q.titulo": "Três perguntas para achar o seu próximo perfume"
+  },
+  "v": 1
+ },
+ "publishedAt": "2026-11-03T20:15:58.941Z"
+}
