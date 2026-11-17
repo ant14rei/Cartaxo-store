@@ -5,7 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Decants de perfumes árabes, de nicho e de grife em 5, 10 e 15 ml, e frascos inteiros. Monte seu pedido e finalize pelo WhatsApp.">
 <meta name="theme-color" content="#0A0B0D">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0B0D'/%3E%3Cpath fill='%23fff' d='M79 16 L40 16 C30 16 26 20 24 29 L15 70 C13 80 17 84 27 84 L76 84 L79 70 L38 70 C35 70 34 68 35 65 L41 35 C42 31 44 30 47 30 L76 30 Z'/%3E%3Ccircle cx='84' cy='18' r='12' fill='%231D9BF0'/%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Cartaxo Store">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Cartaxo Store · Decants e perfumes</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -57,7 +61,9 @@ h1,h2,h3{font-family:var(--f-display);font-stretch:118%;text-wrap:balance;margin
 .top .wrap{display:flex;align-items:center;gap:20px;height:64px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
 .brand svg{width:34px;height:34px;flex:none}
-.brand b{font-family:var(--f-display);font-stretch:125%;font-weight:850;font-size:17px;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+.brand b{font-family:var(--f-display);font-stretch:125%;font-weight:850;font-size:17px;letter-spacing:.02em;text-transform:uppercase;line-height:1;white-space:nowrap}
+@media (max-width:440px){.brand b{font-size:14px;font-stretch:108%;letter-spacing:0}.brand svg,.brand img.logoimg{width:30px;height:30px}.top .wrap{gap:12px}}
+@media (max-width:350px){.addrow .btn{min-width:0;padding-inline:10px;font-size:14px}.qty button{width:34px}.detail,.order{padding:14px}.sizes{gap:6px}.size{padding:10px 8px}.brand b{font-size:12px;font-stretch:100%}.brand{gap:6px}.brand svg,.brand img.logoimg{width:26px;height:26px}.top .wrap{gap:8px}.cartbtn{padding:7px 10px}.themebtn{width:36px;height:36px}}
 .brand span{font-weight:400;font-stretch:100%;color:var(--ink-2);letter-spacing:.14em;font-size:11px;display:block;margin-top:3px;font-family:var(--f-mono);white-space:nowrap}
 @media (max-width:380px){.brand span{letter-spacing:.06em;font-size:10px}}
 .nav{display:flex;gap:22px;margin-left:auto}
@@ -68,10 +74,10 @@ h1,h2,h3{font-family:var(--f-display);font-stretch:118%;text-wrap:balance;margin
 @media (max-width:760px){.nav{display:none}.cartbtn{margin-left:auto}}
 
 /* Vitrine principal */
-.shop{display:grid;gap:24px;padding-block:16px 56px;grid-template-areas:"stage" "copy" "panel"}
+.shop{display:grid;gap:24px;padding-block:16px 56px;grid-template-areas:"stage" "copy" "panel";grid-template-columns:minmax(0,1fr)}
 .copy{grid-area:copy}
 .stage{grid-area:stage;min-width:0}
-.panel{grid-area:panel;min-width:0;display:grid;gap:22px;align-content:start}
+.panel{grid-area:panel;min-width:0;display:grid;gap:22px;align-content:start;grid-template-columns:minmax(0,1fr)}
 @media (min-width:980px){
   .shop{grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);grid-template-areas:"stage copy" "stage panel";column-gap:52px;padding-block:36px 72px}
   .stage{position:sticky;top:calc(env(safe-area-inset-top,0px) + 132px);align-self:start}
@@ -117,7 +123,7 @@ h1,h2,h3{font-family:var(--f-display);font-stretch:118%;text-wrap:balance;margin
 .cats button{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:600;color:var(--ink-2)}
 .cats button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
 .cats .c{font-family:var(--f-mono);font-size:11px;opacity:.7;margin-left:4px}
-.list{display:grid;gap:8px;max-height:430px;overflow:auto;padding:2px;margin:-2px;overscroll-behavior:contain}
+.list{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;max-height:430px;overflow:auto;padding:2px;margin:-2px;overscroll-behavior:contain}
 @media (max-width:979px){.list{max-height:none;overflow:visible}}
 .pf{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:12px;align-items:center;text-align:left;width:100%;border:1px solid var(--line);background:var(--bg);border-radius:var(--r);padding:12px 14px;transition:border-color .15s}
 .pf:hover{border-color:var(--ink-3)}
@@ -127,11 +133,11 @@ h1,h2,h3{font-family:var(--f-display);font-stretch:118%;text-wrap:balance;margin
 .pf .nm span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .pf .nm svg{width:16px;height:16px;flex:none;visibility:hidden}
 .pf[aria-pressed="true"] .nm svg{visibility:visible}
-.pf .br{color:var(--ink-2);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pf .br{display:block;color:var(--ink-2);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .pf .from{text-align:right;font-size:12px;color:var(--ink-3);line-height:1.25}
 .pf .from b{display:block;color:var(--ink);font-size:15px;font-weight:700}
 
-.detail{border:1px solid var(--line);border-radius:20px;padding:20px;display:grid;gap:16px;background:var(--bg)}
+.detail{border:1px solid var(--line);border-radius:20px;padding:20px;display:grid;grid-template-columns:minmax(0,1fr);gap:16px;background:var(--bg)}
 .detail .hd{display:flex;gap:14px;align-items:flex-start}
 .detail .hd .sw{width:46px;height:46px}
 .detail h3{font-size:24px;font-weight:800}
@@ -153,7 +159,7 @@ h1,h2,h3{font-family:var(--f-display);font-stretch:118%;text-wrap:balance;margin
 .toast{font-size:13px;color:var(--blue-ink);min-height:1.2em}
 
 /* Pedido */
-.order{border:1px solid var(--ink);border-radius:20px;padding:20px;display:grid;gap:16px}
+.order{border:1px solid var(--ink);border-radius:20px;padding:20px;display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
 .order h2{font-size:22px;font-weight:800}
 .empty{color:var(--ink-2);font-size:14px;background:var(--surface);border-radius:12px;padding:14px}
 .items{display:grid;gap:10px;margin:0;padding:0;list-style:none}
@@ -194,6 +200,11 @@ details.msg pre{white-space:pre-wrap;font-family:var(--f-mono);font-size:12px;ba
 .band h2 em{font-style:italic;color:var(--blue)}
 .band p{color:var(--band-2);max-width:52ch;margin:14px 0 0}
 .tiers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.sobre-cta{display:grid;gap:10px;justify-items:start}
+@media (min-width:900px){.sobre-cta{justify-items:end}}
+.insta-btn{background:var(--band-ink);color:var(--band);border-color:var(--band-ink)}
+.insta-btn svg{width:18px;height:18px}
+.insta-handle{font-family:var(--f-mono);font-size:13px;color:var(--band-2)}
 .tier{border:1px solid var(--band-line);border-radius:18px;padding:20px}
 .tier .big{font-family:var(--f-display);font-stretch:125%;font-weight:900;font-size:clamp(40px,6vw,60px);line-height:1}
 .tier .big small{font-size:.45em;font-weight:700}
@@ -399,6 +410,28 @@ body.adm-on .mbar{left:440px}
 .pmain{font-size:9px;color:#fff;font-weight:700;padding-left:3px}
 .pth.add{display:grid;place-items:center;align-content:center;border:1.5px dashed var(--ink-3);cursor:pointer;font-size:22px;color:var(--ink);text-align:center;line-height:1}
 .pth.add small{display:block;font-size:10px;color:var(--ink-3);margin-top:4px}
+.mtop{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mseg{background:var(--surface);backdrop-filter:none}
+.mseg button{padding:6px 12px;font-size:12.5px}
+.mref{margin-left:auto;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:650;color:var(--ink-2)}
+.mcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.mcard{border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:2px;min-width:0}
+.mcard span{font-size:12px;color:var(--ink-2)}
+.mcard b{font-family:var(--f-display);font-stretch:112%;font-size:20px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;line-height:1.15}
+.mcard small{font-size:11.5px;color:var(--ink-3)}
+.mbox{border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:6px;min-width:0}
+.mbox h4{margin:0 0 2px;font-size:13px;font-weight:700}
+.mbox svg{width:100%;height:auto;display:block}
+.mbox .bar-d{fill:var(--blue)}
+.mbox .bar-d:hover{fill:var(--blue-ink)}
+.mbox .ax{fill:var(--ink-3);font-size:10px;font-family:var(--f-mono)}
+.mbox .gl{stroke:var(--line);stroke-width:1}
+.mrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 10px;font-size:13px;align-items:center}
+.mrow .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mrow .vl{font-variant-numeric:tabular-nums;color:var(--ink-2);font-size:12.5px;white-space:nowrap}
+.mrow .bq{grid-column:1/-1;height:6px;border-radius:99px;background:var(--surface);overflow:hidden}
+.mrow .bq i{display:block;height:100%;background:var(--blue);border-radius:99px}
+.mvazio{font-size:12.5px;color:var(--ink-3);margin:0}
 .adm-flash{outline:2px solid var(--blue)!important;outline-offset:4px;border-radius:6px;transition:outline-color .6s}
 .adm-toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:95;background:var(--ink);color:var(--on-ink);border-radius:12px;padding:11px 16px;font-size:13.5px;max-width:calc(100% - 32px);box-shadow:0 8px 28px rgba(0,0,0,.2)}
 .adm-peek{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:90;border:0;background:var(--blue);color:#fff;border-radius:999px;padding:12px 18px;font-weight:700;font-size:14px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
@@ -445,10 +478,34 @@ body.adm-on .mbar{left:440px}
       orderBy(f,d){ this._o=f; this._d=d||"asc"; return this; }, limit(n){ this._l=n; return this; },
       async get(){ const r=await fetch(url(col)+"?ordem="+encodeURIComponent(this._o)+"&dir="+this._d+"&limite="+this._l,{credentials:"same-origin",headers:H}); const d=await ok(r); const docs=d.docs.map(x=>snap(x.id,x.data)); return {docs,size:docs.length,empty:!docs.length}; }};
     return q; }
-  let quem=null; const eu=()=>quem||(quem=fetch("/api/eu",{credentials:"same-origin",headers:H}).then(r=>r.ok?r.json():{admin:false}).catch(()=>({admin:false})));
+  let quem=null; const eu=()=>quem||(quem=fetch("/api/eu",{credentials:"same-origin",headers:H}).then(r=>r.ok?r.json():{admin:false}).catch(()=>({admin:false})).then(j=>{ if(j&&j.admin&&window.cxMarcarDono) window.cxMarcarDono(); return j; }));
   const assets={ async upload(blob){ const fd=new FormData(); fd.append("foto",blob,"foto"); const d=await ok(await fetch("/api/fotos",{method:"POST",credentials:"same-origin",headers:H,body:fd})); return {id:d.id,url:"/_blob/"+d.id,sizeBytes:d.bytes,contentType:d.tipo}; },
     async list(){ return {assets:[]}; }, async delete(){ return {deleted:false}; } };
   window.CARTAXO_SERVIDOR=true;
+
+  /* Métricas sem dado pessoal: nenhum nome, telefone ou IP é guardado; o id do visitante é renovado a cada 90 dias. O aparelho do dono não é contado. */
+  (function(){
+    let dono=false; try{ dono=localStorage.getItem("cx_dono")==="1"; }catch(e){}
+    const rid=()=>{ try{ return Array.from(crypto.getRandomValues(new Uint8Array(12)),b=>b.toString(16).padStart(2,"0")).join(""); }catch(e){ return ""; } };
+    let v="", s="", ultimo="";
+    try{ v=localStorage.getItem("cx_v")||""; const t=+(localStorage.getItem("cx_v_t")||0);
+      if(!/^[0-9a-f]{24}$/.test(v)||!t||Date.now()-t>90*864e5){ v=rid(); localStorage.setItem("cx_v",v); localStorage.setItem("cx_v_t",String(Date.now())); } }catch(e){ v=v||rid(); }
+    try{ s=sessionStorage.getItem("cx_s")||""; if(!/^[0-9a-f]{24}$/.test(s)){ s=rid(); sessionStorage.setItem("cx_s",s); } ultimo=sessionStorage.getItem("cx_ped")||""; }catch(e){ s=s||rid(); }
+    function enviar(t,d){
+      if(dono||!v||!s) return;
+      const corpo=JSON.stringify(Object.assign({t,v,s},d||{}));
+      try{ if(navigator.sendBeacon&&navigator.sendBeacon("/api/ev",new Blob([corpo],{type:"application/json"}))) return; }catch(e){}
+      try{ fetch("/api/ev",{method:"POST",body:corpo,headers:{"Content-Type":"application/json"},keepalive:true,credentials:"same-origin"}).catch(()=>{}); }catch(e){}
+    }
+    window.cxTrack=function(t,d){
+      if(t==="pedido"){ const sig=JSON.stringify((d&&d.itens)||[]); if(sig===ultimo) return; ultimo=sig; try{ sessionStorage.setItem("cx_ped",sig); }catch(e){} }
+      enviar(t,d);
+    };
+    window.cxMarcarDono=function(){ dono=true; try{ localStorage.setItem("cx_dono","1"); }catch(e){} };
+    let q; try{ q=new URLSearchParams(location.search); }catch(e){ q=new URLSearchParams(""); }
+    const limpo=x=>String(x||"").toLowerCase().replace(/[^a-z0-9_-]/g,"").slice(0,30);
+    enviar("visita",{ref:String(document.referrer||"").slice(0,300),us:limpo(q.get("utm_source")),um:limpo(q.get("utm_medium")),ad:(q.has("fbclid")||q.has("gclid"))?1:0});
+  })();
   window.claude={ use: async nome=>{
     if(nome==="db") return {doc,collection};
     if(nome==="user") return {isOwner:async()=>!!(await eu()).admin, canEdit:async()=>!!(await eu()).admin};
@@ -473,17 +530,17 @@ body.adm-on .mbar{left:440px}
   </defs>
 </svg>
 
-<div class="preview" data-t="g.aviso" data-l="Aviso no topo da página">Prévia: perfumes, preços, entrega e regras do kit são de exemplo.</div>
+<div class="preview" data-t="g.aviso" data-l="Aviso no topo da página (deixe vazio para esconder)" data-vazio>Prévia: perfumes, preços e entrega são de exemplo.</div>
 
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="Cartaxo Store, início">
       <svg><use href="#logo"/></svg>
-      <div><b>Cartaxo</b><span>STORE · DECANTS</span></div>
+      <div><b>Cartaxo Store</b></div>
     </a>
     <nav class="nav" aria-label="Seções">
       <a href="#vitrine">Perfumes</a>
-      <a href="#kit">Kit Descoberta</a>
+      <a href="#sobre">Quem somos</a>
       <a href="#quiz">Quiz</a>
       <a href="#como">Como funciona</a>
       <a href="#entrega">Entrega</a>
@@ -508,7 +565,7 @@ body.adm-on .mbar{left:440px}
     <div class="copy">
       <span class="eyebrow mono"><i></i><span data-t="d.chamada" data-l="Chamada pequena acima do título">Decants de 5, 10 e 15 ml</span></span>
       <h1 data-t="d.titulo" data-l="Título principal" data-rich>Prove o perfume antes de comprar o <em>frasco inteiro</em></h1>
-      <p class="lead" data-t="d.subtitulo" data-l="Subtítulo">Decants de 5, 10 e 15 ml envasados do frasco original. Escolha, monte seu kit e finalize o pedido pelo WhatsApp.</p>
+      <p class="lead" data-t="d.subtitulo" data-l="Subtítulo">Decants de 5, 10 e 15 ml envasados do frasco original. Escolha os perfumes e finalize o pedido pelo WhatsApp.</p>
       <div class="ctas">
         <a class="btn btn-solid" href="#escolha" data-t="d.botao1" data-l="Botão principal">Escolher meus decants</a>
         <a class="btn btn-ghost" href="#quiz" data-t="d.botao2" data-l="Botão secundário">Descobrir meu perfume no quiz</a>
@@ -516,7 +573,7 @@ body.adm-on .mbar{left:440px}
       <div class="facts">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span data-t="d.item1" data-l="Destaque 1">Árabes, nicho e grife</span></span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span data-t="d.item2" data-l="Destaque 2">Vidro com spray</span></span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span data-t="d.item3" data-l="Destaque 3">Desconto a partir de 3 decants</span></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><span data-t="d.item3" data-l="Destaque 3">Pedido direto pelo WhatsApp</span></span>
       </div>
     </div>
 
@@ -559,18 +616,16 @@ body.adm-on .mbar{left:440px}
     </div>
   </section>
 
-  <section class="band t-decants" id="kit">
+  <section class="band t-decants" id="sobre">
     <div class="wrap">
       <div>
-        <span class="mono" style="color:var(--blue)" data-t="k.chamada" data-l="Chamada da faixa do kit">Kit Descoberta</span>
-        <h2 style="margin-top:12px" data-t="k.titulo" data-l="Título do kit" data-rich>Prove mais, <em>pague menos</em></h2>
-        <p data-t="k.texto" data-l="Texto do kit (confira se bate com as faixas)">Com 3 decants ou mais no pedido, você ganha 10% de desconto. Com 5 ou mais, o desconto sobe para 15%. O desconto entra sozinho no seu pedido.</p>
-        <div class="ctas"><a class="btn" href="#escolha" style="background:var(--band-ink);color:var(--band);border-color:var(--band-ink)" data-t="k.botao" data-l="Botão do kit">Montar meu kit</a></div>
+        <span class="mono" style="color:var(--blue)" data-t="s.chamada" data-l="Chamada da faixa Quem somos">Sobre a loja</span>
+        <h2 style="margin-top:12px" data-t="s.titulo" data-l="Título de Quem somos" data-rich>Prazer, somos a <em>Cartaxo Store</em></h2>
+        <p data-t="s.texto" data-l="Texto de Quem somos">Trabalhamos com perfumes árabes, de nicho e de grife, em frascos inteiros e em decants. Cada decant é envasado do frasco original, em vidro com spray. Veja as novidades e fale conosco pelo Instagram.</p>
       </div>
-      <div class="tiers" id="kitTiers">
-        <div class="tier"><div class="big num">10<small>%</small></div><div class="q">a partir de 3 decants</div></div>
-        <div class="tier"><div class="big num">15<small>%</small></div><div class="q">a partir de 5 decants</div></div>
-        <p class="fine">Vale para decants de 5 e 10 ml, com desconto máximo de R$ 60,00 por pedido.</p>
+      <div class="sobre-cta">
+        <a class="btn insta-btn" id="instaBtn" href="https://www.instagram.com/cartaxostore__/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span data-t="s.botao" data-l="Botão do Instagram">Conhecer no Instagram</span></a>
+        <span class="insta-handle" id="instaHandle">@cartaxostore__</span>
       </div>
     </div>
   </section>
@@ -598,7 +653,7 @@ body.adm-on .mbar{left:440px}
       </div>
       <ol class="steps">
         <li><h3 data-t="c.p1t" data-l="Passo 1 · título">Escolha os perfumes</h3><p data-t="c.p1" data-l="Passo 1 · texto">Selecione cada fragrância e o tamanho: 5, 10 ou 15 ml.</p></li>
-        <li><h3 data-t="c.p2t" data-l="Passo 2 · título">Monte seu kit</h3><p data-t="c.p2" data-l="Passo 2 · texto">A partir de 3 decants, o pedido recebe desconto.</p></li>
+        <li><h3 data-t="c.p2t" data-l="Passo 2 · título">Escolha o tamanho</h3><p data-t="c.p2" data-l="Passo 2 · texto">Escolha o decant de 5, 10 ou 15 ml, ou leve o frasco inteiro.</p></li>
         <li><h3 data-t="c.p3t" data-l="Passo 3 · título">Finalize no WhatsApp</h3><p data-t="c.p3" data-l="Passo 3 · texto">Seu pedido chega pronto, e você combina pagamento e entrega com a loja.</p></li>
       </ol>
       <div class="yield">
@@ -623,7 +678,7 @@ body.adm-on .mbar{left:440px}
     <div class="lojabar" id="lojaBar"></div>
     <div class="cats" role="tablist" aria-label="Categorias da loja" id="fcats"></div>
     <div class="fgrid" id="fgrid"></div>
-    <p class="note" data-t="l.nota" data-l="Nota no fim da loja">Fotos, tamanhos e preços de exemplo. Frascos inteiros não entram no desconto do Kit Descoberta.</p>
+    <p class="note" data-t="l.nota" data-l="Nota no fim da loja">Fotos, tamanhos e preços de exemplo. A disponibilidade e os valores finais são confirmados pelo WhatsApp.</p>
   </section>
 
   <section class="sec" id="entrega">
@@ -631,11 +686,11 @@ body.adm-on .mbar{left:440px}
       <div class="sechead">
         <span class="mono" style="color:var(--blue-ink)" data-t="e.chamada" data-l="Chamada da entrega">Entrega por região</span>
         <h2 data-t="e.titulo" data-l="Título da entrega">Escolha como receber</h2>
-        <p data-t="e.texto" data-l="Texto da entrega">Valores de exemplo. O valor final é confirmado pela loja no WhatsApp.</p>
+        <p data-t="e.texto" data-l="Texto da entrega">O valor da entrega é combinado pelo WhatsApp, conforme a sua região.</p>
       </div>
       <div class="shiptable">
         <table>
-          <thead><tr><th>Opção</th><th>Prazo</th><th>Valor</th><th>Condição</th></tr></thead>
+          <thead><tr><th>Opção</th><th>Prazo</th><th>Valor</th><th>Detalhes</th></tr></thead>
           <tbody id="shipTable"></tbody>
         </table>
       </div>
@@ -647,10 +702,11 @@ body.adm-on .mbar{left:440px}
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="Cartaxo Store">
       <svg><use href="#logo"/></svg>
-      <div><b>Cartaxo</b><span>STORE · DECANTS</span></div>
+      <div><b>Cartaxo Store</b></div>
     </a>
-    <div>Instagram: <a href="https://instagram.com/cartaxostore_" target="_blank" rel="noopener" id="instaLink">@cartaxostore_</a></div>
+    <div>Instagram: <a href="https://www.instagram.com/cartaxostore__/" target="_blank" rel="noopener" id="instaLink">@cartaxostore__</a></div>
     <div class="note" data-t="g.rodape" data-l="Nota do rodapé">Prévia com preços de exemplo. Marcas citadas pertencem aos seus donos.</div>
+    <div class="note" data-t="g.privacidade" data-l="Aviso de privacidade no rodapé">Contamos as visitas sem cookies de anúncios e sem guardar nome, telefone ou endereço IP.</div>
     <a href="#admin" id="ownerLink" hidden>Painel admin</a>
   </div>
 </footer>
@@ -663,16 +719,17 @@ body.adm-on .mbar{left:440px}
 
 <aside class="adm" id="adm" hidden aria-label="Painel admin">
   <div class="adm-top">
-    <div class="adm-title"><svg viewBox="0 0 100 100"><use href="#logo"/></svg><b>Painel da loja</b><a href="#vitrine" id="admExit">Sair do painel</a></div>
+    <div class="adm-title"><svg viewBox="0 0 100 100"><use href="#logo"/></svg><b>Cartaxo Store · Painel</b><a href="#vitrine" id="admExit">Sair do painel</a></div>
     <div class="adm-status" id="admStatus" data-s="ok" aria-live="polite"><i></i><span>Carregando…</span></div>
     <div class="adm-actions"><button type="button" class="btn btn-solid" id="admPub" disabled>Publicar</button><button type="button" class="btn btn-ghost" id="admDiscard" disabled>Descartar rascunho</button></div>
     <div class="adm-prev">Mostrar na prévia:<div class="seg" role="group" aria-label="Aba mostrada na prévia" id="admPrev"><button type="button" id="admPrevD" data-prev="decants" aria-pressed="true">Decants</button><button type="button" id="admPrevL" data-prev="loja" aria-pressed="false">Loja</button></div></div>
   </div>
   <div class="adm-tabs" role="tablist" aria-label="Seções do painel" id="admTabs">
+    <button type="button" role="tab" id="at-metricas" data-tab="metricas" aria-selected="false" hidden>Métricas</button>
     <button type="button" role="tab" id="at-textos" data-tab="textos" aria-selected="true">Textos</button>
     <button type="button" role="tab" id="at-decants" data-tab="decants" aria-selected="false">Decants</button>
     <button type="button" role="tab" id="at-loja" data-tab="loja" aria-selected="false">Loja</button>
-    <button type="button" role="tab" id="at-kit" data-tab="kit" aria-selected="false">Kit e entrega</button>
+    <button type="button" role="tab" id="at-entrega" data-tab="entrega" aria-selected="false">Entrega</button>
     <button type="button" role="tab" id="at-contato" data-tab="contato" aria-selected="false">Contato e logo</button>
     <button type="button" role="tab" id="at-historico" data-tab="historico" aria-selected="false">Histórico</button>
   </div>
@@ -737,14 +794,11 @@ const frPhotos = f => Array.isArray(f.imgs)&&f.imgs.length?f.imgs.slice(0,5).map
 const thumb = (p,cls="sw") => imgSrc(p)?`<img class="${cls}" src="${esc(imgSrc(p))}" alt="" style="object-fit:cover" onerror="this.style.visibility='hidden'">`:`<span class="${cls}" style="${swatch(p)}"></span>`;
 const isFr = l => typeof l.id==="string" && l.id.startsWith("f-");
 const YIELD={5:"≈ 50 a 70 borrifadas",10:"≈ 100 a 140 borrifadas",15:"≈ 150 a 210 borrifadas"};
-// Regras do kit (exemplo): 3+ = 10%, 5+ = 15%, só sobre 5 e 10 ml, teto R$ 60,00
-const KIT={tiers:[[5,15],[3,10]],eligible:[5,10],cap:6000};
-// Entrega (exemplo)
+// Entrega: "comb" = valor a combinar pelo WhatsApp
 const SHIP=[
- {id:"retirada",n:"Retirada combinada",d:"Combinar local e horário",prazo:"A combinar",v:0},
- {id:"cidade",n:"Entrega na cidade",d:"Grátis acima de R$ 99,90",prazo:"Até 2 dias úteis",v:1000,freeOver:9990},
- {id:"ne",n:"Correios · Nordeste",d:"R$ 15,00 de desconto acima de R$ 199,90",prazo:"Conforme os Correios",v:2200,offOver:19990,off:1500},
- {id:"br",n:"Correios · demais regiões",d:"R$ 15,00 de desconto acima de R$ 199,90",prazo:"Conforme os Correios",v:3200,offOver:19990,off:1500},
+ {id:"retirada",n:"Retirada combinada",d:"Local e horário combinados pelo WhatsApp",prazo:"A combinar",v:0,comb:true},
+ {id:"cidade",n:"Entrega na cidade",d:"Valor combinado pelo WhatsApp",prazo:"A combinar",v:0,comb:true},
+ {id:"correios",n:"Correios",d:"Valor conforme o CEP, combinado pelo WhatsApp",prazo:"Conforme os Correios",v:0,comb:true},
 ];
 
 /* ================== Cálculo (funções puras) ================== */
@@ -754,20 +808,11 @@ const priceOf = (p,size) => p.pr[SIZES.indexOf(size)];
 function calc(cart, shipId){
   const lines = cart.map(l=>{const fr=isFr(l); const p=fr?fById(l.id):byId(l.id); const unit=fr?p.price:priceOf(p,l.size); return {...l,p,fr,unit,total:unit*l.qty};});
   const units = lines.reduce((a,l)=>a+l.qty,0);
-  const kitUnits = lines.filter(l=>!l.fr).reduce((a,l)=>a+l.qty,0);
   const subtotal = lines.reduce((a,l)=>a+l.total,0);
-  const tier = KIT.tiers.find(t=>kitUnits>=t[0]);
-  const pct = tier?tier[1]:0;
-  const eligible = lines.filter(l=>!l.fr&&KIT.eligible.includes(l.size)).reduce((a,l)=>a+l.total,0);
-  let discount = Math.round(eligible*pct/100);
-  const capped = discount>KIT.cap; if(capped) discount=KIT.cap;
-  const after = subtotal-discount;
-  const s = SHIP.find(x=>x.id===shipId)||SHIP[0];
-  let ship=s.v, shipNote="";
-  if(s.freeOver && after>=s.freeOver){ship=0;shipNote="grátis acima de "+brl(s.freeOver);}
-  if(s.offOver && after>=s.offOver){ship=Math.max(0,s.v-s.off);shipNote="com desconto acima de "+brl(s.offOver);}
-  const next = kitUnits<3?3-kitUnits:(kitUnits<5?5-kitUnits:0);
-  return {lines,units,kitUnits,subtotal,pct,discount,capped,after,ship,shipBase:s.v,shipNote,s,total:after+ship,next};
+  const s = SHIP.find(x=>x.id===shipId)||SHIP[0]||{id:"",n:"A combinar",d:"",prazo:"",v:0,comb:true};
+  const comb = s.comb!==false;
+  const ship = comb?0:s.v;
+  return {lines,units,subtotal,ship,comb,s,total:subtotal+ship};
 }
 
 /* ================== Estado ================== */
@@ -811,20 +856,24 @@ function syncStage(){
 }
 function selectPerfume(id,spin=true){
   state.sel=id; state.qty=1;
+  {const pv=byId(id); if(pv) track("ver",{i:pv.id,n:pv.n});}
   document.querySelectorAll(".pf").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.id===id)));
   renderDetail(); syncStage(); if(spin&&window.Decant) Decant.spin();
 }
 function setSize(s){state.size=s; renderDetail(); syncStage();}
+
+/* ================== Métricas (anônimas; só no servidor próprio) ================== */
+const track=(t,d)=>{try{if(window.cxTrack) window.cxTrack(t,d);}catch(e){}};
+function cartSnap(){const r=calc(state.cart,state.ship); return {itens:r.lines.map(l=>({i:l.id,n:l.p.n,z:l.fr?"frasco":String(l.size),q:l.qty,p:l.unit})),tot:r.subtotal,e:state.ship};}
 
 /* ================== Pedido ================== */
 function buildMessage(r){
   const hasFr=r.lines.some(l=>l.fr), hasDc=r.lines.some(l=>!l.fr);
   const L=[`Olá, Cartaxo Store. Vim pelo site e gostaria de fazer este pedido ${hasFr?(hasDc?"de decants e perfumes":"de perfumes"):"de decants"}:`,""];
   r.lines.forEach(l=>L.push(`• ${l.qty}x ${l.p.n} (${l.p.b}) · ${l.fr?"frasco ":""}${l.size} ml · ${brl(l.total)}`));
-  L.push("",`Subtotal: ${brl(r.subtotal)}`);
-  if(r.discount>0) L.push(`Kit Descoberta (${r.pct}%${r.capped?", com teto":""}): − ${brl(r.discount)}`);
-  L.push(`Entrega: ${r.s.n} · ${r.ship===0?"R$ 0,00":brl(r.ship)}${r.shipNote?" ("+r.shipNote+")":""}`);
-  L.push(`Total: ${brl(r.total)}`);
+  L.push("",`Produtos: ${brl(r.subtotal)}`);
+  L.push(`Entrega: ${r.s.n} · ${r.comb?"a combinar":brl(r.ship)}`);
+  L.push(r.comb?`Total: ${brl(r.total)} + entrega a combinar`:`Total: ${brl(r.total)}`);
   const q=quizText(); if(q) L.push("",`Respostas do quiz: ${q}`);
   L.push("","Pode confirmar a disponibilidade e a forma de pagamento?");
   return L.join("\n");
@@ -834,20 +883,13 @@ function renderOrder(){
   $("#cartCount").textContent=r.units;
   const mb=$("#mbar"); $("#mbarCount").textContent=r.units===1?"1 decant":`${r.units} decants`; $("#mbarTotal").textContent=brl(r.total);
   mb.dataset.has=r.units>0?"1":""; updateMbar();
-  const kitMsg = r.kitUnits===0?`Adicione 3 decants para ganhar <b>10% de desconto</b>.`
-    : r.kitUnits<3?`${r.next===1?"Falta 1 decant":"Faltam "+r.next+" decants"} para <b>10% de desconto</b>.`
-    : r.kitUnits<5?`<b>10% de desconto</b> aplicado. ${r.next===1?"Falta 1 decant":"Faltam "+r.next+" decants"} para <b>15%</b>.`
-    : `<b>15% de desconto</b> aplicado no seu Kit Descoberta.`;
-  const kit=`<div class="kit"><p>${kitMsg}</p><div class="bar" aria-hidden="true"><i style="width:${Math.min(100,r.kitUnits/5*100)}%"></i></div><div class="ticks"><span>0</span><span>3 · 10%</span><span>5 · 15%</span></div></div>`;
-  const items=r.lines.length?`<ul class="items">${r.lines.map((l,i)=>`<li class="item"><span class="t">${l.qty}x ${esc(l.p.n)}<small>${esc(l.p.b)} · ${l.fr?"frasco "+l.size+" ml · loja":l.size+" ml"+(KIT.eligible.includes(l.size)?"":" · fora do desconto do kit")}</small></span><span class="num">${brl(l.total)}</span><button type="button" class="x" id="rm-${i}" data-rm="${i}" aria-label="Remover ${esc(l.p.n)}">×</button></li>`).join("")}</ul>`
+  const items=r.lines.length?`<ul class="items">${r.lines.map((l,i)=>`<li class="item"><span class="t">${l.qty}x ${esc(l.p.n)}<small>${esc(l.p.b)} · ${l.fr?"frasco "+l.size+" ml · loja":l.size+" ml"}</small></span><span class="num">${brl(l.total)}</span><button type="button" class="x" id="rm-${i}" data-rm="${i}" aria-label="Remover ${esc(l.p.n)}">×</button></li>`).join("")}</ul>`
     :`<div class="empty">Nenhum decant ainda. Escolha um perfume e toque em <b>Adicionar</b>.</div>`;
   const ship=`<fieldset><legend>Entrega</legend>${SHIP.map(s=>{
-      const rr=calc(state.cart,s.id); const changed=rr.ship!==s.v && r.units>0;
-      return `<label class="ship" for="sh-${s.id}"><input type="radio" name="ship" id="sh-${s.id}" value="${s.id}" ${state.ship===s.id?"checked":""}><span class="l">${esc(s.n)}<small>${esc(s.d)}</small></span><span class="v num">${changed?`<s>${brl(s.v)}</s>`:""}${brl(changed?rr.ship:s.v)}</span></label>`}).join("")}</fieldset>`;
-  const sum=`<div class="sum num"><div><span>Subtotal</span><span>${brl(r.subtotal)}</span></div>
-    ${r.discount>0?`<div class="disc"><span>Kit Descoberta ${r.pct}%${r.capped?" (teto)":""}</span><span>− ${brl(r.discount)}</span></div>`:""}
-    <div><span>Entrega</span><span>${brl(r.ship)}</span></div>
-    <div class="tot"><span>Total</span><span>${brl(r.total)}</span></div></div>`;
+      return `<label class="ship" for="sh-${s.id}"><input type="radio" name="ship" id="sh-${s.id}" value="${s.id}" ${state.ship===s.id?"checked":""}><span class="l">${esc(s.n)}<small>${esc(s.d)}</small></span><span class="v num">${s.comb!==false?"A combinar":brl(s.v)}</span></label>`}).join("")}</fieldset>`;
+  const sum=`<div class="sum num"><div><span>Produtos</span><span>${brl(r.subtotal)}</span></div>
+    <div><span>Entrega</span><span>${r.comb?"A combinar":brl(r.ship)}</span></div>
+    <div class="tot"><span>Total</span><span>${brl(r.total)}</span></div>${r.comb&&r.units?`<p class="note" style="margin:0">+ entrega, combinada pelo WhatsApp.</p>`:""}</div>`;
   const msg=buildMessage(r);
   const link=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
   const send=`<div class="sendrow">
@@ -855,15 +897,16 @@ function renderOrder(){
     <button type="button" class="btn btn-ghost" id="copyBtn" ${r.units?"":"disabled"}>Copiar mensagem do pedido</button>
     <p class="note" id="copyNote">${WHATSAPP?"":"Prévia: o número da loja ainda não foi configurado. O WhatsApp vai pedir para escolher o contato."}</p>
     ${r.units?`<details class="msg"><summary>Ver a mensagem que será enviada</summary><pre id="msgPre">${esc(msg)}</pre></details>`:""}</div>`;
-  $("#orderBody").innerHTML=`<div style="display:grid;gap:16px">${items}${kit}${ship}${sum}${send}</div>`;
+  $("#orderBody").innerHTML=`<div style="display:grid;gap:16px">${items}${ship}${sum}${send}</div>`;
   renderLojaBar(r);
   save();
 }
 function addToCart(){
   if(!byId(state.sel)||byId(state.sel).out) return;
+  {const p0=byId(state.sel); track("add",{i:p0.id,n:p0.n,z:String(state.size),q:state.qty,p:priceOf(p0,state.size)});}
   const ex=state.cart.find(l=>l.id===state.sel&&l.size===state.size);
   if(ex) ex.qty=Math.min(20,ex.qty+state.qty); else state.cart.push({id:state.sel,size:state.size,qty:state.qty});
-  renderOrder();
+  renderOrder(); track("carrinho",cartSnap());
   const p=byId(state.sel); const t=$("#toast"); if(t) t.textContent=`${state.qty}x ${p.n} ${state.size} ml adicionado ao pedido.`;
   if(window.Decant) Decant.pulse();
 }
@@ -926,7 +969,8 @@ function renderLojaBar(r){
 function addFrasco(id){
   const f=fById(id); if(!f||f.out||f.off) return; const ex=state.cart.find(l=>l.id===id);
   if(ex) ex.qty=Math.min(20,ex.qty+1); else state.cart.push({id,size:f.ml,qty:1});
-  renderOrder(); const t=$("#ft-"+id); if(t) t.textContent="Adicionado ao pedido.";
+  track("add",{i:f.id,n:f.n,z:"frasco",q:1,p:f.price});
+  renderOrder(); track("carrinho",cartSnap()); const t=$("#ft-"+id); if(t) t.textContent="Adicionado ao pedido.";
 }
 /* Abas: #loja abre a Loja; qualquer outro endereço abre os Decants */
 let curTab=null;
@@ -942,7 +986,7 @@ addEventListener("hashchange",applyTab);
 
 /* ================== Tabela de entrega ================== */
 function renderShipTable(){
-  $("#shipTable").innerHTML=SHIP.map(s=>`<tr><td><b>${esc(s.n)}</b></td><td>${esc(s.prazo)}</td><td class="v num">${brl(s.v)}</td><td>${s.freeOver?"Grátis acima de "+brl(s.freeOver):s.offOver?"− "+brl(s.off)+" acima de "+brl(s.offOver):"—"}</td></tr>`).join("");
+  $("#shipTable").innerHTML=SHIP.map(s=>`<tr><td><b>${esc(s.n)}</b></td><td>${esc(s.prazo)}</td><td class="v num">${s.comb!==false?"A combinar":brl(s.v)}</td><td>${esc(s.d)||"—"}</td></tr>`).join("");
 }
 
 /* ================== Eventos ================== */
@@ -960,7 +1004,7 @@ document.addEventListener("click",e=>{
   if(t.id==="qMinus"){state.qty=Math.max(1,state.qty-1); renderDetail(); return;}
   if(t.id==="qPlus"){state.qty=Math.min(20,state.qty+1); renderDetail(); return;}
   if(t.id==="addBtn"){addToCart(); return;}
-  if(t.dataset.rm!==undefined){state.cart.splice(+t.dataset.rm,1); renderOrder(); return;}
+  if(t.dataset.rm!==undefined){state.cart.splice(+t.dataset.rm,1); renderOrder(); track("carrinho",cartSnap()); return;}
   if(t.dataset.q){state.quiz[t.dataset.q]=t.dataset.v; renderQuiz(); renderOrder(); return;}
   if(t.dataset.see){const p=byId(t.dataset.see); state.cat="todos"; renderCats(); renderList(); selectPerfume(p.id); $("#vitrine").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}); return;}
   if(t.id==="copyBtn"){const msg=buildMessage(calc(state.cart,state.ship)); const note=$("#copyNote");
@@ -969,6 +1013,7 @@ document.addEventListener("click",e=>{
   }
 });
 document.addEventListener("change",e=>{if(e.target.name==="ship"){state.ship=e.target.value; renderOrder();}});
+document.addEventListener("click",e=>{ if(e.target.closest("#sendBtn,#copyBtn")&&state.cart.length) track("pedido",cartSnap()); },true);
 
 renderLoja(); renderCats(); renderList(); renderDetail(); renderOrder(); renderQuiz(); renderShipTable(); applyTab();
 $("#stageName").textContent=byId(state.sel).n;
@@ -1105,11 +1150,15 @@ $("#stageName").textContent=byId(state.sel).n;
     x.textAlign="center"; x.fillStyle="rgba(255,255,255,.45)"; setFont(x,'500 15px "IBM Plex Mono", monospace'); spacing(x,"4px"); x.fillText("CARTAXO STORE · DECANT",256,725); spacing(x,"0px");
   }
   function drawBack(){const x=back.getContext("2d"); paintBg(x); drawLogo(x,256,384,330);}
-  function drawSide(c,text){const x=c.getContext("2d"); paintBg(x); x.save(); x.translate(256,384); x.rotate(-Math.PI/2); x.textAlign="center"; x.fillStyle="#fff";
-    setFont(x,'700 44px Archivo, Arial, sans-serif',"expanded"); spacing(x,"3px"); x.fillText(text,0,14); spacing(x,"0px"); x.restore();
+  let instaTxt="@CARTAXOSTORE__";
+  function drawSide(c,text,selo){const x=c.getContext("2d"); paintBg(x); x.save(); x.translate(256,384); x.rotate(-Math.PI/2); x.textAlign="center"; x.fillStyle="#fff";
+    let fs=44; setFont(x,`700 ${fs}px Archivo, Arial, sans-serif`,"expanded"); spacing(x,"3px");
+    const maxW=selo?520:620; while(x.measureText(text).width>maxW&&fs>20){fs-=2; setFont(x,`700 ${fs}px Archivo, Arial, sans-serif`,"expanded");}
+    x.fillText(text,0,Math.round(fs*0.32)); spacing(x,"0px"); x.restore();
+    if(!selo) return;
     x.save(); x.translate(256,660); x.scale(1.6,1.6); x.translate(-84,-18); x.fillStyle="#1D9BF0"; x.fill(badgePath); x.lineWidth=3; x.lineCap="round"; x.lineJoin="round"; x.strokeStyle="#fff"; x.stroke(checkPath); x.restore();}
   const tex=c=>{const t=new THREE.CanvasTexture(c); t.encoding=THREE.sRGBEncoding; t.anisotropy=renderer.capabilities.getMaxAnisotropy(); return t;};
-  drawBack(); drawSide(side1,"@CARTAXOSTORE_"); drawSide(side2,"DECANT");
+  drawBack(); drawSide(side1,instaTxt,false); drawSide(side2,"DECANT",true);
   const tFront=tex(front), tBack=tex(back), tS1=tex(side1), tS2=tex(side2);
   const satin=brush(256,256,(x,w,h)=>{const d=x.getImageData(0,0,w,h);for(let i=0;i<d.data.length;i+=4){const v=118+Math.random()*20|0;d.data[i]=d.data[i+1]=d.data[i+2]=v;}x.putImageData(d,0,0);});
   const lm=t=>new THREE.MeshStandardMaterial({map:t,roughness:0.58,metalness:0,envMapIntensity:0.32,bumpMap:satin,bumpScale:0.0012});
@@ -1161,8 +1210,9 @@ $("#stageName").textContent=byId(state.sel).n;
   window.Decant={
     set(p,size){drawFront(p,size); tFront.needsUpdate=true; levelTo=LEVELS[size]; liqTo=new THREE.Color(p.liq); kick();},
     spin(){if(!reduce&&!dragging) vel=Math.max(vel,9); kick();},
-    pulse(){pulseT=performance.now(); kick();}
-    ,label:front
+    pulse(){pulseT=performance.now(); kick();},
+    setInsta(h){const t="@"+String(h||"").toUpperCase(); if(t===instaTxt) return; instaTxt=t; drawSide(side1,instaTxt,false); tS1.needsUpdate=true; kick();}
+    ,label:front,lado:side1
   };
 
   // Arrastar
@@ -1201,7 +1251,7 @@ $("#stageName").textContent=byId(state.sel).n;
 
   const p0=byId(state.sel); drawFront(p0,state.size); tFront.needsUpdate=true; levelTo=level=LEVELS[state.size]; liqTo.set(p0.liq); liqColor.set(p0.liq);
   resize(); kick();
-  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(()=>{const p=byId(state.sel); drawFront(p,state.size); tFront.needsUpdate=true; drawBack(); drawSide(side1,"@CARTAXOSTORE_"); drawSide(side2,"DECANT"); tBack.needsUpdate=tS1.needsUpdate=tS2.needsUpdate=true; kick();});}
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(()=>{const p=byId(state.sel); drawFront(p,state.size); tFront.needsUpdate=true; drawBack(); drawSide(side1,instaTxt,false); drawSide(side2,"DECANT",true); tBack.needsUpdate=tS1.needsUpdate=tS2.needsUpdate=true; kick();});}
 })();
 </script>
 <script>
@@ -1213,10 +1263,10 @@ $("#stageName").textContent=byId(state.sel).n;
   const clone=o=>JSON.parse(JSON.stringify(o));
   const richToHtml=s=>esc(s).replace(/\*(.+?)\*/g,"<em>$1</em>");
   const htmlToRich=h=>h.replace(/<em>(.*?)<\/em>/g,"*$1*").replace(/<[^>]+>/g,"").replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,'"').replace(/\s+/g," ").trim();
-  const GROUPS={g:"Geral",d:"Aba Decants · topo",k:"Faixa do Kit Descoberta",q:"Quiz",c:"Como funciona",e:"Entrega",l:"Aba Loja"};
+  const GROUPS={g:"Geral",d:"Aba Decants · topo",s:"Quem somos",q:"Quiz",c:"Como funciona",e:"Entrega",l:"Aba Loja"};
   const TEXT_DEF={}, TEXT_LBL={}, TEXT_RICH={};
   document.querySelectorAll("[data-t]").forEach(el=>{const k=el.dataset.t; TEXT_RICH[k]=el.hasAttribute("data-rich"); TEXT_DEF[k]=TEXT_RICH[k]?htmlToRich(el.innerHTML):el.textContent.replace(/\s+/g," ").trim(); TEXT_LBL[k]=el.dataset.l||k;});
-  let DEFAULT={v:1,texts:clone(TEXT_DEF),decants:clone(P),frascos:clone(FR),kit:clone(KIT),ship:clone(SHIP),contato:{whats:WHATSAPP,insta:"cartaxostore_"},logo:""};
+  let DEFAULT={v:1,texts:clone(TEXT_DEF),decants:clone(P),frascos:clone(FR),ship:clone(SHIP),contato:{whats:WHATSAPP,insta:"cartaxostore__"},logo:""};
 
   /* ---------- validação (dados compartilhados não são confiáveis) ---------- */
   const HEX=/^#[0-9a-fA-F]{6}$/, DID=/^[a-z0-9][a-z0-9-]{0,40}$/, FID=/^f-[a-z0-9-]{1,40}$/, AID=/^[A-Za-z0-9_-]{8,80}$/;
@@ -1239,41 +1289,36 @@ $("#stageName").textContent=byId(state.sel).n;
       decant:typeof x.decant==="string"&&DID.test(x.decant)?x.decant:null,...(()=>{const ids=[...new Set([...(AID.test(x.imgId||"")?[x.imgId]:[]),...(Array.isArray(x.imgs)?x.imgs:[])].filter(v=>typeof v==="string"&&AID.test(v)))];
         if(Array.isArray(x.imgs)&&x.imgs.length) { const ord=x.imgs.filter(v=>typeof v==="string"&&AID.test(v)); ids.splice(0,ids.length,...new Set(ord)); }
         const imgs=ids.slice(0,5); return {imgs,imgId:imgs[0]||""};})(),img:"",out:!!x.out,off:!!x.off};}
-  function normKit(k){ if(!k||!Array.isArray(k.tiers)) return null;
-    const tiers=k.tiers.filter(t=>Array.isArray(t)&&Number.isInteger(t[0])&&t[0]>=1&&t[0]<=50&&Number.isInteger(t[1])&&t[1]>=0&&t[1]<=90).slice(0,4);
-    return {tiers:tiers.sort((a,b)=>b[0]-a[0]),eligible:arrOf(k.eligible,[5,10,15]),cap:cents(k.cap)??6000};}
   function normShip(x){ if(!x||!/^[a-z0-9-]{1,30}$/.test(x.id)||!str(x.n).trim()||cents(x.v)===null) return null;
-    const o={id:x.id,n:str(x.n,60),d:str(x.d,90),prazo:str(x.prazo,40),v:x.v};
-    if(cents(x.freeOver)) o.freeOver=x.freeOver; if(cents(x.offOver)&&cents(x.off)){o.offOver=x.offOver;o.off=x.off;} return o;}
+    return {id:x.id,n:str(x.n,60),d:str(x.d,90),prazo:str(x.prazo,40),v:x.v,comb:x.comb!==false};}
   function merge(c){ const d=clone(DEFAULT); if(!c||typeof c!=="object") return d;
     const texts=d.texts; if(c.texts&&typeof c.texts==="object") Object.keys(texts).forEach(k=>{if(typeof c.texts[k]==="string") texts[k]=c.texts[k].slice(0,400);});
     const dec=Array.isArray(c.decants)?c.decants.map(normDecant).filter(Boolean):d.decants;
     const fr=Array.isArray(c.frascos)?c.frascos.map(normFr).filter(Boolean):d.frascos;
     const ship=Array.isArray(c.ship)?c.ship.map(normShip).filter(Boolean):[];
     const ct=c.contato||{};
-    return {v:1,texts,decants:dec,frascos:fr,kit:normKit(c.kit)||d.kit,ship:ship.length?ship:d.ship,
-      contato:{whats:/^55\d{10,11}$/.test(ct.whats||"")?ct.whats:"",insta:/^[A-Za-z0-9._]{1,30}$/.test(ct.insta||"")?ct.insta:"cartaxostore_"},
+    return {v:1,texts,decants:dec,frascos:fr,ship:ship.length?ship:d.ship,
+      contato:{whats:/^55\d{10,11}$/.test(ct.whats||"")?ct.whats:"",insta:/^[A-Za-z0-9._]{1,30}$/.test(ct.insta||"")?ct.insta:"cartaxostore__"},
       logo:AID.test(c.logo||"")?c.logo:""};}
 
   DEFAULT=merge(DEFAULT); // mesmo formato do que vem do banco
 
   /* ---------- aplicar conteúdo na página ---------- */
-  function renderKitBand(){const el=$("#kitTiers"); if(!el) return; const t=KIT.tiers.slice().sort((a,b)=>a[0]-b[0]);
-    const sz=KIT.eligible.map(s=>s+" ml"); const sizes=sz.length>1?sz.slice(0,-1).join(", ")+" e "+sz[sz.length-1]:(sz[0]||"nenhum tamanho");
-    el.innerHTML=t.map(x=>`<div class="tier"><div class="big num">${x[1]}<small>%</small></div><div class="q">a partir de ${x[0]} decants</div></div>`).join("")+`<p class="fine">Vale para decants de ${sizes}, com desconto máximo de ${brl(KIT.cap)} por pedido.</p>`;}
   function applyContent(c){
     P.splice(0,P.length,...clone(c.decants)); FR.splice(0,FR.length,...clone(c.frascos));
-    KIT.tiers=clone(c.kit.tiers).sort((a,b)=>b[0]-a[0]); KIT.eligible=c.kit.eligible.slice(); KIT.cap=c.kit.cap;
     SHIP.splice(0,SHIP.length,...clone(c.ship)); WHATSAPP=c.contato.whats||"";
     document.querySelectorAll("[data-t]").forEach(el=>{const k=el.dataset.t; const v=c.texts[k]??TEXT_DEF[k]; if(TEXT_RICH[k]) el.innerHTML=richToHtml(v); else el.textContent=v;});
-    const ig=c.contato.insta||"cartaxostore_", a=$("#instaLink"); if(a){a.href="https://instagram.com/"+encodeURIComponent(ig); a.textContent="@"+ig;}
+    document.querySelectorAll("[data-vazio]").forEach(el=>{el.hidden=!el.textContent.trim();});
+    const ig=c.contato.insta||"cartaxostore__", igUrl="https://www.instagram.com/"+encodeURIComponent(ig)+"/", a=$("#instaLink"); if(a){a.href=igUrl; a.textContent="@"+ig;}
+    const ib=$("#instaBtn"); if(ib) ib.href=igUrl; const ih=$("#instaHandle"); if(ih) ih.textContent="@"+ig;
+    if(window.Decant&&Decant.setInsta) Decant.setInsta(ig);
     document.querySelectorAll(".brand").forEach(b=>{let im=b.querySelector("img.logoimg"); const sv=b.querySelector("svg");
       if(c.logo){if(!im){im=document.createElement("img");im.className="logoimg";im.alt="";b.insertBefore(im,b.firstChild);} im.src="/_blob/"+c.logo; im.hidden=false; sv.style.display="none";}
       else{if(im) im.hidden=true; sv.style.display="";}});
     state.cart=state.cart.filter(l=>{if(isFr(l)){const f=fById(l.id); if(!f||f.off||f.out) return false; l.size=f.ml; return true;} const p=byId(l.id); return !!p&&!p.off&&!p.out&&SIZES.includes(l.size);});
     if(!SHIP.some(s=>s.id===state.ship)) state.ship=SHIP[0].id;
     const vp=vis(P); if(!vp.some(p=>p.id===state.sel)&&vp.length) state.sel=vp[0].id;
-    renderKitBand(); renderLoja(); renderCats(); renderList(); renderDetail(); renderOrder(); renderQuiz(); renderShipTable(); syncStage();
+    renderLoja(); renderCats(); renderList(); renderDetail(); renderOrder(); renderQuiz(); renderShipTable(); syncStage();
   }
 
   /* ---------- conexão com a plataforma ---------- */
@@ -1288,6 +1333,7 @@ $("#stageName").textContent=byId(state.sel).n;
           if(!on&&pub) applyContent(pub); if(on) status(); },()=>{}); }
     }}catch(e){}
     if(owner) $("#ownerLink").hidden=false;
+    if(owner&&window.CARTAXO_SERVIDOR){ $("#at-metricas").hidden=false; tab="metricas"; try{ localStorage.setItem("cx_dono","1"); }catch(e){} }
     ready=true; readyCbs.forEach(f=>f()); readyCbs=[];
     if(location.hash==="#admin") enter();
   }
@@ -1364,8 +1410,46 @@ $("#stageName").textContent=byId(state.sel).n;
       ${frPhotosForm(x,i)}
       <div class="tog"><label><input type="checkbox" data-kind="fr" data-i="${i}" data-k="out" ${x.out?"checked":""}>Esgotado</label><label><input type="checkbox" data-kind="fr" data-i="${i}" data-k="off" ${x.off?"checked":""}>Ocultar do site</label></div>
       <button type="button" class="danger" data-kind="fr" data-i="${i}" data-k="del">Remover perfume</button></div>`;}
+  /* ---------- métricas ---------- */
+  let mDias=7, mDados=null, mErro="", mCarregando=false;
+  async function carregarMetricas(){ mCarregando=true; mErro=""; if(tab==="metricas") body();
+    try{ const r=await fetch("/api/metricas?dias="+mDias,{credentials:"same-origin",headers:{"X-Cartaxo":"1"}}); if(!r.ok) throw new Error("http "+r.status); mDados=await r.json(); }
+    catch(e){ mDados=null; mErro="Não foi possível carregar as métricas. Confira a internet e toque em Atualizar."; }
+    mCarregando=false; if(tab==="metricas") body(); }
+  const nf=v=>Number(v||0).toLocaleString("pt-BR");
+  const pctf=(a,b)=>b?(Math.round(a/b*1000)/10).toLocaleString("pt-BR",{minimumFractionDigits:1})+"%":"—";
+  const ddmm=d=>d.slice(8,10)+"/"+d.slice(5,7);
+  function grafico(titulo,serie,campo,nome){ const vals=serie.map(x=>x[campo]||0), max=Math.max(1,...vals);
+    const W=400,H=130,top=14,bot=18,left=4,right=4,n=serie.length,gap=2,bw=Math.max(2,(W-left-right-gap*(n-1))/n), ch=H-top-bot;
+    const bars=serie.map((x,i)=>{const v=x[campo]||0, h=v?Math.max(2,v/max*ch):0, X=left+i*(bw+gap), Y=top+ch-h, r=Math.min(4,bw/2,h);
+      const d=h?`M${X},${top+ch}V${Y+r}Q${X},${Y} ${X+r},${Y}H${X+bw-r}Q${X+bw},${Y} ${X+bw},${Y+r}V${top+ch}Z`:"";
+      return `<g><rect x="${X}" y="${top}" width="${bw}" height="${ch}" fill="transparent"><title>${ddmm(x.dia)}: ${nf(v)} ${nome}</title></rect>${d?`<path class="bar-d" d="${d}"><title>${ddmm(x.dia)}: ${nf(v)} ${nome}</title></path>`:""}</g>`;}).join("");
+    return `<div class="mbox"><h4>${titulo}</h4><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${titulo}: máximo de ${nf(max)} ${nome} em um dia">
+      <line class="gl" x1="0" x2="${W}" y1="${top+ch+.5}" y2="${top+ch+.5}"/><text class="ax" x="${W-right}" y="10" text-anchor="end">máx. ${nf(max)}</text>
+      ${bars}<text class="ax" x="${left}" y="${H-4}">${ddmm(serie[0].dia)}</text><text class="ax" x="${W-right}" y="${H-4}" text-anchor="end">${ddmm(serie[n-1].dia)}</text></svg></div>`; }
+  function lista(titulo,itens,fmt){ const max=Math.max(1,...itens.map(x=>x.n||0));
+    return `<div class="mbox"><h4>${titulo}</h4>${itens.length?itens.map(x=>`<div class="mrow"><span class="nm" title="${esc(x.nome)}">${esc(x.nome)}</span><span class="vl">${fmt(x)}</span><span class="bq" aria-hidden="true"><i style="width:${Math.round((x.n||0)/max*100)}%"></i></span></div>`).join(""):`<p class="mvazio">Sem dados neste período.</p>`}</div>`; }
+  function metricasHtml(){
+    const topo=`<div class="mtop"><div class="seg mseg" role="group" aria-label="Período">${[[1,"Hoje"],[7,"7 dias"],[30,"30 dias"]].map(([n,l])=>`<button type="button" id="md-${n}" data-mdias="${n}" aria-pressed="${mDias===n}">${l}</button>`).join("")}</div><button type="button" class="mref" id="mAtualizar" data-matualizar="1">${mCarregando?"Atualizando…":"Atualizar"}</button></div>`;
+    if(mErro) return topo+`<p class="adm-hint">${mErro}</p>`;
+    const d=mDados; if(!d) return topo+`<p class="adm-hint">Carregando as métricas…</p>`;
+    const cards=[["Visitas",nf(d.visitas),"vezes que o site abriu"],["Visitantes",nf(d.visitantes),"pessoas diferentes"],["Pedidos no WhatsApp",nf(d.pedidos),"pedidos enviados"],["Valor dos pedidos",brl(d.valor_pedidos||0),"só produtos"],
+      ["Conversão",pctf(d.pedidos,d.visitantes),"pedidos ÷ visitantes"],["Valor médio",d.pedidos?brl(Math.round(d.valor_pedidos/d.pedidos)):"—","por pedido"],["Carrinhos abandonados",nf(d.abandonados),"adicionaram e não enviaram"],["Valor abandonado",brl(d.valor_abandonado||0),"ficou no carrinho"]];
+    const qtd=x=>`${nf(x.n)} un.`;
+    return topo+`<div class="mcards">${cards.map(([l,v,sub])=>`<div class="mcard"><span>${l}</span><b>${v}</b><small>${sub}</small></div>`).join("")}</div>`
+      +(d.por_dia&&d.por_dia.length>1?grafico("Visitas por dia",d.por_dia,"visitas","visitas")+grafico("Pedidos por dia",d.por_dia,"pedidos","pedidos"):"")
+      +lista("Perfumes mais vistos",d.top_vistos||[],x=>`${nf(x.n)} vistas`)
+      +lista("Mais adicionados ao pedido",d.top_adicionados||[],qtd)
+      +lista("Mais pedidos no WhatsApp",d.top_pedidos||[],x=>`${nf(x.n)} un. · ${brl(x.valor||0)}`)
+      +lista("Ficaram no carrinho (abandonados)",d.top_abandonados||[],qtd)
+      +lista("De onde vieram",d.origens||[],x=>`${nf(x.n)} visitas · ${nf(x.pedidos||0)} pedidos`)
+      +lista("Aparelho",d.aparelhos||[],x=>`${nf(x.n)} visitas`)
+      +lista("Tamanho escolhido",d.tamanhos||[],qtd)
+      +`<p class="adm-hint">Pedido = toque em "Enviar meu pedido pelo WhatsApp" ou "Copiar mensagem". Carrinho abandonado = adicionou e ficou 30 minutos sem enviar. Para separar a origem dos anúncios, use links como <b>www.cartaxostore.com.br/?utm_source=instagram&amp;utm_medium=anuncio</b>. As visitas deste aparelho não são contadas. Não guardamos nome, telefone nem endereço IP.</p>`;
+  }
   function body(){ if(!on) return; const b=$("#admBody");
     document.querySelectorAll("#admTabs button").forEach(x=>x.setAttribute("aria-selected",String(x.dataset.tab===tab)));
+    if(tab==="metricas"){ b.innerHTML=metricasHtml(); if(!mDados&&!mCarregando&&!mErro) carregarMetricas(); return; }
     if(tab==="textos"){ const keys=Object.keys(TEXT_DEF); const groups={}; keys.forEach(k=>{(groups[k.split(".")[0]]=groups[k.split(".")[0]]||[]).push(k);});
       b.innerHTML=`<p class="adm-hint">Toque num campo para ver onde ele fica na página. Nos campos marcados com ✦, escreva entre *asteriscos* a parte que fica em azul.</p>`+
         Object.keys(GROUPS).filter(g=>groups[g]).map(g=>`<h3>${GROUPS[g]}</h3>`+groups[g].map(k=>{const v=draft.texts[k]??TEXT_DEF[k]; const long=v.length>48;
@@ -1375,16 +1459,12 @@ $("#stageName").textContent=byId(state.sel).n;
       b.innerHTML=`<p class="adm-hint">${tab==="decants"?"Toque num decant para editar. Ele aparece no stand ao lado.":"Toque num perfume para editar. As fotos ficam melhores no formato 4:5, de pé."}</p>`+
         list.map((x,i)=>`<div class="ar">${rowHead(x,kind,i,list.length)}${open===i?(kind==="dec"?decForm(x,i):frForm(x,i)):""}</div>`).join("")+
         `<button type="button" class="addbtn" data-kind="${kind}" data-k="add">+ ${tab==="decants"?"Adicionar decant":"Adicionar perfume à loja"}</button>`;
-    } else if(tab==="kit"){ const k=draft.kit; const t=k.tiers.slice().sort((a,c)=>a[0]-c[0]);
-      b.innerHTML=`<h3>Kit Descoberta</h3><p class="adm-hint">Se mudar as faixas, confira também o texto da faixa do kit e o passo 2 em Textos.</p>`+
-        t.map((x,j)=>`<div class="g2"><div class="af"><label for="kit-c${j}">Faixa ${j+1}: a partir de (decants)</label><input type="text" inputmode="numeric" id="kit-c${j}" data-kind="kit" data-j="${j}" data-k="c" value="${x[0]}"><span class="err" id="err-kit-c${j}"></span></div><div class="af"><label for="kit-p${j}">Desconto (%)</label><input type="text" inputmode="numeric" id="kit-p${j}" data-kind="kit" data-j="${j}" data-k="p" value="${x[1]}"><span class="err" id="err-kit-p${j}"></span></div></div>`).join("")+
-        `<div class="af"><span class="lb">Tamanhos com desconto</span><div class="chk">${SIZES.map(s=>`<label><input type="checkbox" data-kind="kit" data-k="el" value="${s}" ${k.eligible.includes(s)?"checked":""}>${s} ml</label>`).join("")}</div></div>
-        <div class="af"><label for="kit-cap">Desconto máximo por pedido (R$)</label><input type="text" inputmode="decimal" id="kit-cap" data-kind="kit" data-k="cap" value="${money(k.cap)}"><span class="err" id="err-kit-cap"></span></div>
-        <h3>Entrega</h3>`+draft.ship.map((s,i)=>`<div class="ar"><div class="ar-b" style="border-top:0">
+    } else if(tab==="entrega"){
+      b.innerHTML=`<h3>Entrega</h3><p class="adm-hint">Marque "A combinar" para o valor não aparecer: o cliente vê "A combinar" e vocês acertam pelo WhatsApp. Desmarque para mostrar o valor.</p>`+draft.ship.map((s,i)=>`<div class="ar"><div class="ar-b" style="border-top:0">
           <div class="af"><label for="sh-${i}-n">Nome *</label><input type="text" id="sh-${i}-n" data-kind="ship" data-i="${i}" data-k="n" value="${esc(s.n)}"></div>
           <div class="af"><label for="sh-${i}-d">Descrição curta</label><input type="text" id="sh-${i}-d" data-kind="ship" data-i="${i}" data-k="d" value="${esc(s.d)}"></div>
-          <div class="g2"><div class="af"><label for="sh-${i}-prazo">Prazo</label><input type="text" id="sh-${i}-prazo" data-kind="ship" data-i="${i}" data-k="prazo" value="${esc(s.prazo)}"></div><div class="af"><label for="sh-${i}-v">Valor (R$)</label><input type="text" inputmode="decimal" id="sh-${i}-v" data-kind="ship" data-i="${i}" data-k="v" value="${money(s.v)}"><span class="err" id="err-ship-${i}-v"></span></div></div>
-          <div class="g3"><div class="af"><label for="sh-${i}-freeOver">Grátis acima de</label><input type="text" inputmode="decimal" id="sh-${i}-freeOver" data-kind="ship" data-i="${i}" data-k="freeOver" value="${s.freeOver?money(s.freeOver):""}" placeholder="vazio = não"><span class="err" id="err-ship-${i}-freeOver"></span></div><div class="af"><label for="sh-${i}-offOver">Desconto acima de</label><input type="text" inputmode="decimal" id="sh-${i}-offOver" data-kind="ship" data-i="${i}" data-k="offOver" value="${s.offOver?money(s.offOver):""}" placeholder="vazio = não"><span class="err" id="err-ship-${i}-offOver"></span></div><div class="af"><label for="sh-${i}-off">Valor do desconto</label><input type="text" inputmode="decimal" id="sh-${i}-off" data-kind="ship" data-i="${i}" data-k="off" value="${s.off?money(s.off):""}"><span class="err" id="err-ship-${i}-off"></span></div></div>
+          <div class="g2"><div class="af"><label for="sh-${i}-prazo">Prazo</label><input type="text" id="sh-${i}-prazo" data-kind="ship" data-i="${i}" data-k="prazo" value="${esc(s.prazo)}"></div><div class="af"><label for="sh-${i}-v">Valor (R$)</label><input type="text" inputmode="decimal" id="sh-${i}-v" data-kind="ship" data-i="${i}" data-k="v" value="${money(s.v)}" ${s.comb?"disabled":""}><span class="err" id="err-ship-${i}-v"></span></div></div>
+          <div class="tog"><label><input type="checkbox" id="sh-${i}-comb" data-kind="ship" data-i="${i}" data-k="comb" ${s.comb?"checked":""}>A combinar (o valor não aparece)</label></div>
           ${draft.ship.length>1?`<button type="button" class="danger" data-kind="ship" data-i="${i}" data-k="del">Remover esta entrega</button>`:""}</div></div>`).join("")+
         `<button type="button" class="addbtn" data-kind="ship" data-k="add">+ Adicionar opção de entrega</button>`;
     } else if(tab==="contato"){ const c=draft.contato;
@@ -1437,19 +1517,10 @@ $("#stageName").textContent=byId(state.sel).n;
       else if(k==="out"||k==="off") x[k]=t.checked;
       else return;
       previewTab("loja"); touch(); if(["n","b","out","off","price","ml"].includes(k)) refreshHead(kind,i); return; }
-    if(kind==="kit"){ const kk=draft.kit; const tiers=kk.tiers.slice().sort((a,c)=>a[0]-c[0]);
-      if(k==="c"||k==="p"){ const j=+t.dataset.j, v=Number(t.value); const okC=Number.isInteger(v)&&v>=1&&v<=50, okP=Number.isInteger(v)&&v>=0&&v<=90;
-        if(k==="c"&&!okC){setErr(`kit-c${j}`,"Use um número de 1 a 50."); return;} if(k==="p"&&!okP){setErr(`kit-p${j}`,"Use um número de 0 a 90."); return;}
-        const nt=clone(tiers); nt[j][k==="c"?0:1]=v; if(k==="c"&&new Set(nt.map(x=>x[0])).size!==nt.length){setErr(`kit-c${j}`,"As faixas precisam de quantidades diferentes."); return;}
-        setErr(`kit-${k}${j}`); kk.tiers=nt.sort((a,c)=>c[0]-a[0]); }
-      else if(k==="el"){ kk.eligible=kk.eligible.filter(s=>s!==+t.value); if(t.checked) kk.eligible.push(+t.value); kk.eligible.sort((a,c)=>a-c); }
-      else if(k==="cap"){ const v=parseMoney(t.value); if(v===null){setErr("kit-cap","Use o valor com centavos, por exemplo 60,00."); return;} setErr("kit-cap"); kk.cap=v; }
-      previewTab("decants"); touch(); return; }
     if(kind==="ship"){ const s=draft.ship[i]; if(!s) return;
       if(k==="n"){ if(!t.value.trim()) return; s.n=t.value.slice(0,60); } else if(k==="d") s.d=t.value.slice(0,90); else if(k==="prazo") s.prazo=t.value.slice(0,40);
       else if(k==="v"){ const v=parseMoney(t.value); if(v===null){setErr(`ship-${i}-v`,"Use o valor com centavos, por exemplo 10,00."); return;} setErr(`ship-${i}-v`); s.v=v; }
-      else if(["freeOver","offOver","off"].includes(k)){ if(!t.value.trim()){ delete s[k]; if(k!=="freeOver"){delete s.offOver; delete s.off;} setErr(`ship-${i}-${k}`); }
-        else { const v=parseMoney(t.value); if(!v){setErr(`ship-${i}-${k}`,"Valor com centavos ou vazio."); return;} setErr(`ship-${i}-${k}`); s[k]=v; } }
+      else if(k==="comb"){ s.comb=t.checked; const vi=document.getElementById(`sh-${i}-v`); if(vi) vi.disabled=t.checked; }
       touch(); return; }
     if(kind==="ct"){ if(k==="whats"){ const v=t.value.replace(/\D/g,""); if(v&&!/^55\d{10,11}$/.test(v)){setErr("ct-whats","Comece com 55, depois o DDD e o número. Só números."); return;} setErr("ct-whats"); draft.contato.whats=v; }
       if(k==="insta"){ const v=t.value.trim().replace(/^@/,""); if(!/^[A-Za-z0-9._]{1,30}$/.test(v)){setErr("ct-insta","Use só letras, números, ponto e sublinhado."); return;} setErr("ct-insta"); draft.contato.insta=v; }
@@ -1483,8 +1554,10 @@ $("#stageName").textContent=byId(state.sel).n;
   function arm(key,btn,label,fn){ const a=armed[key]; if(a){ clearTimeout(a.t); delete armed[key]; if(btn.isConnected) btn.textContent=a.old; fn(); return; }
     const old=btn.textContent; btn.textContent=label; armed[key]={old,t:setTimeout(()=>{delete armed[key]; if(btn.isConnected) btn.textContent=old;},4000)}; }
   function onClick(e){ const t=e.target.closest("button,[data-open]"); if(!t||!on) return;
-    if(t.dataset.tab){ tab=t.dataset.tab; open=-1; if(tab==="loja") previewTab("loja"); else if(tab==="decants"||tab==="kit") previewTab("decants"); body(); $("#admBody").scrollTop=0; return; }
+    if(t.dataset.tab){ tab=t.dataset.tab; open=-1; if(tab==="loja") previewTab("loja"); else if(tab==="decants") previewTab("decants"); else if(tab==="entrega"){ const el=$("#entrega"); if(el&&!document.body.classList.contains("adm-peek-on")) el.scrollIntoView({behavior:"smooth"}); } body(); $("#admBody").scrollTop=0; return; }
     if(t.dataset.prev){ previewTab(t.dataset.prev); return; }
+    if(t.dataset.mdias){ mDias=+t.dataset.mdias; mDados=null; carregarMetricas(); return; }
+    if(t.dataset.matualizar){ if(!mCarregando) carregarMetricas(); return; }
     if(t.dataset.hist){ db.doc("historico/"+t.dataset.hist).get().then(s=>{ if(!s.exists) return; draft=merge(s.data().content); touch(true); toast("Versão trazida para o rascunho. Confira e toque em Publicar."); }); return; }
     const kind=t.dataset.kind, k=t.dataset.k, i=+t.dataset.i;
     if(t.dataset.open!==undefined&&!e.target.closest(".mv")){ const idx=+t.dataset.open; open=open===idx?-1:idx; body();
@@ -1503,7 +1576,7 @@ $("#stageName").textContent=byId(state.sel).n;
       if(kind==="fr"&&(k==="phdel"||k==="phmain")){ const x=list[i], j=+t.dataset.j; if(!x.imgs||!x.imgs[j]) return;
         const [id]=x.imgs.splice(j,1); if(k==="phmain") x.imgs.unshift(id); x.imgId=x.imgs[0]||""; touch(true); return; } }
     if(kind==="logo"&&k==="imgdel"){ draft.logo=""; touch(true); return; }
-    if(kind==="ship"){ if(k==="add"){ draft.ship.push({id:"e-"+Date.now().toString(36),n:"Nova entrega",d:"",prazo:"A combinar",v:1000}); touch(true); return; }
+    if(kind==="ship"){ if(k==="add"){ draft.ship.push({id:"e-"+Date.now().toString(36),n:"Nova entrega",d:"",prazo:"A combinar",v:0,comb:true}); touch(true); return; }
       if(k==="del"&&draft.ship.length>1){ arm("ship-"+i,t,"Toque de novo para remover",()=>{ draft.ship.splice(i,1); touch(true); }); return; } }
   }
   async function publish(btn){ arm("pub",btn,"Confirmar publicação",async()=>{ btn.disabled=true; clearTimeout(saveT);
@@ -1513,7 +1586,7 @@ $("#stageName").textContent=byId(state.sel).n;
       await db.doc("site/publicado").set({content:snap,publishedAt:now});
       await db.doc("rascunho/atual").set({content:snap,savedAt:now});
       pub=clone(snap); pubAt=now; savedAt=new Date(); status(""); toast("Publicado. O site já mostra as mudanças.");
-      try{ const q=await db.collection("historico").orderBy("at","desc").get(); for(const d of q.docs.slice(20)) await db.doc("historico/"+d.id).delete(); }catch(e){}
+      try{ const q=await db.collection("historico").orderBy("at","desc").get(); for(const d of q.docs.filter(x=>!x.id.startsWith("antes-da-leva")).slice(20)) await db.doc("historico/"+d.id).delete(); }catch(e){}
       if(tab==="historico") body();
     }catch(e){ status("error"); toast("Não foi possível publicar. Confira a internet e tente de novo."); }
     btn.disabled=false; status(); }); }

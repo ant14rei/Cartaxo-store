@@ -1,7 +1,7 @@
 {
  "content": {
   "contato": {
-   "insta": "cartaxostore_",
+   "insta": "cartaxostore__",
    "whats": "5583981857161"
   },
   "decants": [
@@ -725,23 +725,6 @@
     "price": 179990
    }
   ],
-  "kit": {
-   "cap": 6000,
-   "eligible": [
-    5,
-    10
-   ],
-   "tiers": [
-    [
-     5,
-     15
-    ],
-    [
-     3,
-     10
-    ]
-   ]
-  },
   "logo": "",
   "ship": [
    {
@@ -749,40 +732,38 @@
     "id": "retirada",
     "n": "Retirada combinada",
     "prazo": "A combinar",
-    "v": 0
+    "v": 0,
+    "comb": true
    },
    {
     "d": "Grátis acima de R$ 99,90",
-    "freeOver": 9990,
     "id": "cidade",
     "n": "Entrega na cidade",
     "prazo": "Até 2 dias úteis",
-    "v": 1000
+    "v": 1000,
+    "comb": true
    },
    {
     "d": "R$ 15,00 de desconto acima de R$ 199,90",
     "id": "ne",
     "n": "Correios · Nordeste",
-    "off": 1500,
-    "offOver": 19990,
     "prazo": "Conforme os Correios",
-    "v": 2200
+    "v": 2200,
+    "comb": true
    },
    {
     "d": "R$ 15,00 de desconto acima de R$ 199,90",
     "id": "br",
     "n": "Correios · demais regiões",
-    "off": 1500,
-    "offOver": 19990,
     "prazo": "Conforme os Correios",
-    "v": 3200
+    "v": 3200,
+    "comb": true
    }
   ],
   "texts": {
    "c.chamada": "Como funciona o decant",
    "c.p1": "Selecione cada fragrância e o tamanho: 5, 10 ou 15 ml.",
    "c.p1t": "Escolha os perfumes",
-   "c.p2": "A partir de 3 decants, o pedido recebe desconto.",
    "c.p2t": "Monte seu kit",
    "c.p3": "Seu pedido chega pronto, e você combina pagamento e entrega com a loja.",
    "c.p3t": "Finalize no WhatsApp",
@@ -793,20 +774,11 @@
    "d.chamada": "Decants de 5, 10 e 15 ml",
    "d.item1": "Árabes, nicho e grife",
    "d.item2": "Vidro com spray",
-   "d.item3": "Desconto a partir de 3 decants",
-   "d.subtitulo": "Decants de 5, 10 e 15 ml envasados do frasco original. Escolha, monte seu kit e finalize o pedido pelo WhatsApp.",
    "d.titulo": "Prove o perfume antes de comprar o *frasco inteiro*",
    "e.chamada": "Entrega por região",
-   "e.texto": "Valores de exemplo. O valor final é confirmado pela loja no WhatsApp.",
    "e.titulo": "Escolha como receber",
-   "g.aviso": "Prévia: perfumes, preços, entrega e regras do kit são de exemplo.",
    "g.rodape": "Prévia com preços de exemplo. Marcas citadas pertencem aos seus donos.",
-   "k.botao": "Montar meu kit",
-   "k.chamada": "Kit Descoberta",
-   "k.texto": "Com 3 decants ou mais no pedido, você ganha 10% de desconto. Com 5 ou mais, o desconto sobe para 15%. O desconto entra sozinho no seu pedido.",
-   "k.titulo": "Prove mais, *pague menos*",
    "l.chamada": "Loja · frascos inteiros",
-   "l.nota": "Fotos, tamanhos e preços de exemplo. Frascos inteiros não entram no desconto do Kit Descoberta.",
    "l.texto": "Perfumes completos para quem já conhece a fragrância. Ainda em dúvida? Prove antes em decant, no mesmo pedido.",
    "l.titulo": "Já escolheu o seu? Leve o *frasco inteiro*",
    "q.chamada": "Quiz do perfume",

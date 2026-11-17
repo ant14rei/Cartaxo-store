@@ -94,10 +94,12 @@ def conferir(email: str, senha: str) -> bool:
 def ip_do_cliente(request) -> str:
     # Com o Cloudflare na frente, o endereço real do visitante vem neste cabeçalho.
     # O último item do X-Forwarded-For é o que o próprio Railway acrescenta (não dá para forjar).
-    cf = request.headers.get("cf-connecting-ip")
-    if cf:
-        return cf.strip()[:64]
+    # Sem Cloudflare na frente, o cabeçalho do Cloudflare poderia ser inventado pelo visitante:
+    # ele só vale quando não há X-Forwarded-For ou quando ATRAS_DO_CLOUDFLARE=1 no Railway.
     fwd = request.headers.get("x-forwarded-for")
+    cf = request.headers.get("cf-connecting-ip")
+    if cf and (not fwd or os.environ.get("ATRAS_DO_CLOUDFLARE") == "1"):
+        return cf.strip()[:64]
     if fwd:
         return fwd.split(",")[-1].strip()[:64]
     return request.client.host if request.client else "?"

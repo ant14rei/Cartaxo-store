@@ -62,9 +62,73 @@ def preparar() -> None:
         con.execute("CREATE TABLE IF NOT EXISTS docs (col TEXT NOT NULL, id TEXT NOT NULL, data TEXT NOT NULL, atualizado TEXT NOT NULL, PRIMARY KEY (col, id))")
         con.execute("CREATE TABLE IF NOT EXISTS fotos (id TEXT PRIMARY KEY, tipo TEXT NOT NULL, bytes INTEGER NOT NULL, criado TEXT NOT NULL)")
         con.execute("CREATE TABLE IF NOT EXISTS config (chave TEXT PRIMARY KEY, valor TEXT NOT NULL)")
+        from . import metricas
+        metricas.preparar(con)
         vazio = con.execute("SELECT 1 FROM docs WHERE col='site' AND id='publicado'").fetchone() is None
     if vazio:
         carregar_semente()
+    migrar_leva02()
+
+
+# ---------------- Leva 02: sem descontos e entrega "a combinar" ----------------
+TEXTOS_ANTIGOS = {
+    "e.texto": "Valores de exemplo. O valor final é confirmado pela loja no WhatsApp.",
+    "d.subtitulo": "Decants de 5, 10 e 15 ml envasados do frasco original. Escolha, monte seu kit e finalize o pedido pelo WhatsApp.",
+}
+
+
+def _fala_de_desconto(texto: str) -> bool:
+    """Só o desconto por quantidade antigo (ex.: "a partir de 3 decants... 10% de desconto"). "Sem desconto" não conta."""
+    if "desconto" not in texto or "sem desconto" in texto:
+        return False
+    return "%" in texto or "a partir de" in texto or "recebe desconto" in texto or "ganha" in texto
+
+
+def _limpar_conteudo(c: dict) -> dict:
+    """Tira o Kit Descoberta, os textos de desconto e liga "a combinar" na entrega.
+    Textos que o dono escreveu e que não falam de desconto ficam como estão."""
+    c = json.loads(json.dumps(c))
+    c.pop("kit", None)
+    textos = c.get("texts") if isinstance(c.get("texts"), dict) else {}
+    for k in list(textos):
+        v = textos[k] if isinstance(textos[k], str) else ""
+        baixo = v.lower()
+        if k.startswith("k.") or "kit descoberta" in baixo or "regras do kit" in baixo or TEXTOS_ANTIGOS.get(k) == v or _fala_de_desconto(baixo):
+            del textos[k]
+    c["texts"] = textos
+    entregas = []
+    for e in c.get("ship") or []:
+        if isinstance(e, dict):
+            e = dict(e)
+            e.setdefault("comb", True)
+            for campo in ("freeOver", "offOver", "off"):
+                e.pop(campo, None)
+            entregas.append(e)
+    c["ship"] = entregas
+    contato = dict(c.get("contato") or {})
+    if contato.get("insta") in (None, "", "cartaxostore_"):
+        contato["insta"] = "cartaxostore__"
+    c["contato"] = contato
+    return c
+
+
+def migrar_leva02() -> None:
+    """Roda uma vez só. Guarda a versão anterior no histórico antes de mudar."""
+    if config("migracao_leva02"):
+        return
+    pub = ler("site", "publicado")
+    if pub and isinstance(pub.get("content"), dict):
+        novo = _limpar_conteudo(pub["content"])
+        if novo != pub["content"]:
+            gravar("historico", "antes-da-leva-02", {"at": pub.get("publishedAt") or agora(), "content": pub["content"]})
+            gravar("site", "publicado", {**pub, "content": novo})
+    ras = ler("rascunho", "atual")
+    if ras and isinstance(ras.get("content"), dict):
+        novo = _limpar_conteudo(ras["content"])
+        if novo != ras["content"]:
+            gravar("historico", "antes-da-leva-02-rascunho", {"at": ras.get("savedAt") or agora(), "content": ras["content"]})
+            gravar("rascunho", "atual", {**ras, "content": novo})
+    definir_config("migracao_leva02", agora())
 
 
 def carregar_semente() -> None:

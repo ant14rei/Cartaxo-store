@@ -10,6 +10,8 @@ import json
 import re
 import secrets
 import tempfile
+import threading
+import time
 import zipfile
 from contextlib import asynccontextmanager
 from datetime import datetime
@@ -22,7 +24,7 @@ from starlette.requests import Request
 from starlette.responses import FileResponse, HTMLResponse, JSONResponse, RedirectResponse, Response
 from starlette.routing import Route
 
-from . import banco, seguranca
+from . import banco, metricas, seguranca
 
 RAIZ = Path(__file__).resolve().parent.parent
 FUSO = ZoneInfo("America/Fortaleza")
@@ -188,7 +190,7 @@ async def doc(request: Request):
             return JSONResponse({"erro": "Conteúdo inválido."}, status_code=400)
         banco.gravar(col, id_, dados)
         if col == "historico":   # guarda no máximo 50 versões antigas
-            for velho in banco.listar("historico", "at", desc=True, limite=1000)[50:]:
+            for velho in [d for d in banco.listar("historico", "at", desc=True, limite=1000) if not d["id"].startswith("antes-da-leva")][50:]:
                 banco.apagar("historico", velho["id"])
         return JSONResponse({"ok": True})
     if request.method == "DELETE":
@@ -265,6 +267,77 @@ async def ver_foto(request: Request):
     return FileResponse(caminho, media_type=info["tipo"], headers={"Cache-Control": "public, max-age=31536000, immutable"})
 
 
+# ---------------- métricas (anônimas) ----------------
+_limite_ev: dict = {}
+_trava_ev = threading.Lock()
+MAX_EV_MIN = 120          # eventos por minuto por endereço
+
+
+def _muitos_eventos(ip: str) -> bool:
+    agora = time.time()
+    with _trava_ev:
+        if len(_limite_ev) > 5000:          # tira só os endereços parados; se continuar cheio, recusa endereços novos
+            for k in [k for k, v in _limite_ev.items() if not v or agora - v[-1] >= 60]:
+                del _limite_ev[k]
+            if len(_limite_ev) > 5000 and ip not in _limite_ev:
+                return True
+        lista = [t for t in _limite_ev.get(ip, []) if agora - t < 60]
+        lista.append(agora)
+        _limite_ev[ip] = lista
+        return len(lista) > MAX_EV_MIN
+
+
+async def evento(request: Request):
+    if not mesma_origem(request):
+        return Response(status_code=403)
+    if _muitos_eventos(seguranca.ip_do_cliente(request)):
+        return Response(status_code=429)
+    corpo = await ler_limitado(request, 8 * 1024)
+    if corpo is None:
+        return Response(status_code=413)
+    ua = request.headers.get("user-agent", "")
+    if logado(request) or metricas.eh_robo(ua):
+        return Response(status_code=204)      # o dono e os robôs não entram na conta
+    try:
+        dados = json.loads(corpo)
+    except ValueError:
+        return Response(status_code=400)
+    host = request.headers.get("x-forwarded-host") or request.headers.get("host", "")
+    resultado = metricas.registrar(dados, ua, host.split(":")[0])
+    if resultado == "cheio":
+        return Response(status_code=204)      # teto do dia ou da tabela: descarta sem erro para o visitante
+    if not resultado:
+        return Response(status_code=400)
+    return Response(status_code=204)
+
+
+async def ver_metricas(request: Request):
+    if not logado(request):
+        return nao_autorizado()
+    try:
+        dias = int(request.query_params.get("dias", "7"))
+    except ValueError:
+        dias = 7
+    return JSONResponse(metricas.relatorio(dias), headers={"Cache-Control": "no-store"})
+
+
+# ---------------- ícones, manifesto e robots ----------------
+ESTATICOS = {
+    "/favicon.ico": ("favicon.ico", "image/x-icon"),
+    "/favicon.svg": ("favicon.svg", "image/svg+xml"),
+    "/apple-touch-icon.png": ("apple-touch-icon.png", "image/png"),
+    "/icon-192.png": ("icon-192.png", "image/png"),
+    "/icon-512.png": ("icon-512.png", "image/png"),
+    "/site.webmanifest": ("site.webmanifest", "application/manifest+json"),
+    "/robots.txt": ("robots.txt", "text/plain; charset=utf-8"),
+}
+
+
+async def estatico(request: Request):
+    nome, tipo = ESTATICOS[request.url.path]
+    return FileResponse(RAIZ / "static" / "icones" / nome, media_type=tipo, headers={"Cache-Control": "public, max-age=86400"})
+
+
 # ---------------- cópia de segurança ----------------
 async def backup(request: Request):
     if not logado(request):
@@ -308,6 +381,9 @@ app = Starlette(
         Route("/api/fotos", enviar_foto, methods=["POST"]),
         Route("/api/backup", backup),
         Route("/_blob/{id}", ver_foto),
+        Route("/api/ev", evento, methods=["POST"]),
+        Route("/api/metricas", ver_metricas),
+        *[Route(caminho, estatico) for caminho in ESTATICOS],
     ],
     middleware=[],
     lifespan=ciclo,
